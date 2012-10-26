@@ -1,0 +1,14 @@
+<div class="">
+	{{#taxonomy}}
+	<div id="terms-{{taxonomy}}">
+	<dl class="sub-nav">
+  <dt>{{title}}:</dt>
+  {{#clear}}<dd><span class="round label secondary"><a href="{{url}}" title="{{title}}">{{{reset-text}}}</a></span></dd>{{/clear}}
+  {{^clear}}<dd><span class="round label"><a href="{{url}}" title="{{title}}">{{any-text}}</a></span></dd>{{/clear}}
+{{{term-list}}}
+</dl> 
+
+	{{/taxonomy}}
+
+<a class="taxonomy-drilldown-reset" href="{{reset-url}}">{{reset-text}}</a>
+</div></div>

@@ -1,0 +1,16 @@
+
+	{{#is-selected}}
+	<dd class="term-item {{#is-selected}}current-term{{/is-selected}}">
+		<span class="round label"><a class="remove-term" href="{{url}}" title="{{title}}">{{term-name}} </a></span>
+
+	{{/is-selected}}
+	{{^is-selected}}
+	<dd class="term-item {{#is-selected}}current-term{{/is-selected}}">
+	<span class="round label secondary"><a class="add-term" href="{{url}}" title="{{title}}">{{term-name}} <span style="font-size:75%;background:#ffffff;" class="tiny round label secondary">{{count}}</span></a></span>
+	{{/is-selected}}
+	{{#children}}
+		<ul>
+			{{{child-list}}}
+		</ul>
+	{{/children}}
+</dd>

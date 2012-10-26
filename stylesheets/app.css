@@ -1,0 +1,336 @@
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+} 
+body.admin-bar .top-bar-wrapper div.fixed{
+	top: 25px !important;
+
+} 
+#container{
+	overflow:hidden;	
+}
+.padding-top-ten{
+	padding-top: 10px;
+}
+.top-bar-wrapper{
+	height: 45px;
+}
+body {
+  background: white;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1; 
+  color: #222222;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+body, p, h1, h2, h3, h4, h5, h6 {
+	 font-family: 'Open Sans', "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ 
+}
+p{
+	font-weight:300;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+}
+.nav-bar{
+	font-weight: 600;
+}
+p#logo{
+	margin-bottom:0px;
+}
+
+ul.sub-nav {
+font-size: 16px;
+margin-top: 0px;
+border-top: 0px solid #EEE;
+overflow: hidden;
+}
+ul.sub-nav li.current_page_item {
+border-top: 5px solid #FF6908;
+}
+
+ul.sub-nav li {
+display: block;
+float: left;
+padding: 5px 30px 0 0;
+margin-right: 10px;
+border-top: 5px solid white;
+}
+.h2 {
+font-size: 150%;
+}
+.header-wrapper .header-name a, .header-wrapper .header-description{
+	color: #ffffff;
+}
+#footer .row {
+	padding-top:7px;
+}
+#footer p {
+	margin-bottom: 7px;
+}
+.featured { background: url(spinner.gif) center center #f4f4f4; height: 300px; }
+.featured img { display: none; }
+
+.featured.orbit { background: none; }
+.featured.orbit img { display: block; }
+
+.divide-space {
+margin-top: 45px;
+border-top: 1px solid #CCC;
+padding-top: 23px;
+}
+.alert-box h1, .alert-box h2, .alert-box h3, .alert-box h4, .alert-box h5, .alert-box h6 {
+	color: #ffffff;
+	margin-top: 7px;
+	margin-bottom: 7px;
+} 
+.alert-box p:last{
+	margin-bottom: 5px;
+}
+.alert-box a, .alert-box a:hover, .alert-box a:active, .alert-box a:visited{
+	color: #ffffff;
+	text-decoration: underline;
+}
+.comment-subscription-form label{
+	display:inline; /* overwrite block settng from foundation */
+}
+
+/* fix for br ins shortcodes */
+.row br {
+	display:none;
+} 
+.row div br {
+	display:auto;
+} 
+
+/* Social icons */
+
+/* font-face */
+@font-face {
+  font-family: "SocialFoundicons";
+  src: url("../fonts/social_foundicons.eot");
+  src: url("../fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/social_foundicons.woff") format("woff"), url("../fonts/social_foundicons.ttf") format("truetype"), url("../fonts/social_foundicons.svg#SocialFoundicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* global foundicon styles */
+[class*="foundicon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+[class*="foundicon-"]:before {
+  font-family: "SocialFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+/* icons */
+.foundicon-thumb-up:before {
+  content: "\f000";
+}
+
+.foundicon-thumb-down:before {
+  content: "\f001";
+}
+
+.foundicon-rss:before {
+  content: "\f002";
+}
+
+.foundicon-facebook:before {
+  content: "\f003";
+}
+
+.foundicon-twitter:before {
+  content: "\f004";
+}
+
+.foundicon-pinterest:before {
+  content: "\f005";
+}
+
+.foundicon-github:before {
+  content: "\f006";
+}
+
+.foundicon-path:before {
+  content: "\f007";
+}
+
+.foundicon-linkedin:before {
+  content: "\f008";
+}
+
+.foundicon-dribbble:before {
+  content: "\f009";
+}
+
+.foundicon-stumble-upon:before {
+  content: "\f00a";
+}
+
+.foundicon-behance:before {
+  content: "\f00b";
+}
+
+.foundicon-reddit:before {
+  content: "\f00c";
+}
+
+.foundicon-google-plus:before {
+  content: "\f00d";
+}
+
+.foundicon-youtube:before {
+  content: "\f00e";
+}
+
+.foundicon-vimeo:before {
+  content: "\f00f";
+}
+
+.foundicon-flickr:before {
+  content: "\f010";
+}
+
+.foundicon-slideshare:before {
+  content: "\f011";
+}
+
+.foundicon-picassa:before {
+  content: "\f012";
+}
+
+.foundicon-skype:before {
+  content: "\f013";
+}
+
+.foundicon-steam:before {
+  content: "\f014";
+}
+
+.foundicon-instagram:before {
+  content: "\f015";
+}
+
+.foundicon-foursquare:before {
+  content: "\f016";
+}
+
+.foundicon-delicious:before {
+  content: "\f017";
+}
+
+.foundicon-chat:before {
+  content: "\f018";
+}
+
+.foundicon-torso:before {
+  content: "\f019";
+}
+
+.foundicon-tumblr:before {
+  content: "\f01a";
+}
+
+.foundicon-video-chat:before {
+  content: "\f01b";
+}
+
+.foundicon-digg:before {
+  content: "\f01c";
+}
+
+.foundicon-wordpress:before {
+  content: "\f01d";
+}

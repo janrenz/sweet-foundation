@@ -1,0 +1,40 @@
+Sweet Foundation - A Foundation based Wordpress Theme
+
+For more information, please visit:
+
+http://www.bdisco.de/wordpress-themes/sweet-foundation
+
+Credits:
+
+uses some stuff from bones theme 
+htp://themble.com/bones/
+
+inspired by wp-foundation by 320degrees
+http://320press.com/wp-foundation/
+
+
+Author: Jan Renz
+
+/******************************************************************
+SWEET FOUNDATION CHANGE LOG & HISTORY
+******************************************************************/
+
+
+/* v0.2 initial version */
+- support theming for main nav
+- support widget area in footer
+- "no comments" text can be hidden
+- byline can be hidden
+- site name in header is clickable
+- added wordpress default css to theme
+- support slider on top, slider in content and no slider template for pages
+
+/* v0.1 initial version */
+- support for button shortcode
+- support for alert shortcode
+- support for panel shortcode
+- support for grid shortcodes
+- uses foundation 3.1
+- theme configuration through wordpress theme editor
+
+
