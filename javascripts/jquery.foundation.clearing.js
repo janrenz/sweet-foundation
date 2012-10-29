@@ -26,7 +26,8 @@
       methods = {
         init : function (options, extendMethods) {
           return this.find('ul[data-clearing]').each(function () {
-            var $el = $(this),
+            var doc = $(document),
+                $el = $(this),
                 options = options || {},
                 extendMethods = extendMethods || {},
                 settings = $el.data('fndtn.clearing.settings');
@@ -43,6 +44,7 @@
               methods.assemble($el.find('li'));
 
               methods.events();
+
             }
           });
         },
@@ -58,6 +60,7 @@
 
             // set current and target to the clicked li if not otherwise defined.
             methods.open($(e.target), current, target);
+            methods.update_paddles(target);
           });
 
           $(window).on('resize.fndtn.clearing', function () {
@@ -65,7 +68,7 @@
 
             if (image.length > 0) {
               methods.center(image);
-            } 
+            }
           });
 
           doc.on('click.fndtn.clearing', '.clearing-main-right', function (e) {
@@ -97,6 +100,7 @@
 
               defaults.prev_index = 0;
 
+              root.find('ul[data-clearing]').attr('style', '')
               root.removeClass('clearing-blackout');
               container.removeClass('clearing-container');
               visible_image.hide();
@@ -119,6 +123,27 @@
               methods.go(clearing, 'prev');
             }
           });
+
+          doc.on('movestart', function(e) {
+
+            // If the movestart is heading off in an upwards or downwards
+            // direction, prevent it so that the browser scrolls normally.
+
+            if ((e.distX > e.distY && e.distX < -e.distY) ||
+                (e.distX < e.distY && e.distX > -e.distY)) {
+              e.preventDefault();
+            }
+          });
+
+          doc.bind('swipeleft', 'ul[data-clearing] li', function () {
+            var clearing = $('.clearing-blackout').find('ul[data-clearing]');
+            methods.go(clearing, 'next');
+          });
+
+          doc.bind('swiperight', 'ul[data-clearing] li', function () {
+            var clearing = $('.clearing-blackout').find('ul[data-clearing]');
+            methods.go(clearing, 'prev');
+          });
         },
 
         assemble : function ($li, target) {
@@ -126,7 +151,7 @@
               settings = $el.data('fndtn.clearing.settings'),
               grid = $el.detach(),
               data = {
-                grid: this.outerHTML(grid[0]),
+                grid: '<div class="carousel">' + this.outerHTML(grid[0]) + '</div>',
                 viewing: settings.templates.viewing
               },
               wrapper = '<div class="clearing-assembled"><div>' + data.viewing + data.grid + '</div></div>';
@@ -151,6 +176,7 @@
               container.addClass('clearing-container');
               methods.caption(visible_image.find('.clearing-caption'), $image);
               visible_image.show();
+              methods.fix_height(target);
 
               methods.center(image);
 
@@ -163,14 +189,74 @@
           }
         },
 
+        fix_height : function (target) {
+          var lis = target.siblings();
+
+          lis.each(function () {
+            var li = $(this),
+                image = li.find('img');
+
+            if (li.height() > image.outerHeight()) {
+              li.addClass('fix-height');
+            }
+          });
+          lis.closest('ul').width(lis.length * 100 + '%');
+        },
+
+        update_paddles : function (target) {
+          var visible_image = target.closest('.carousel').siblings('.visible-img');
+
+          if (target.next().length > 0) {
+            visible_image.find('.clearing-main-right').removeClass('disabled');
+          } else {
+            visible_image.find('.clearing-main-right').addClass('disabled');
+          }
+
+          if (target.prev().length > 0) {
+            visible_image.find('.clearing-main-left').removeClass('disabled');
+          } else {
+            visible_image.find('.clearing-main-left').addClass('disabled');
+          }
+        },
+
         load : function ($image) {
           var href = $image.parent().attr('href');
+
+          // preload next and previous
+          this.preload($image);
 
           if (href) {
             return href;
           }
 
           return $image.attr('src');
+        },
+
+        preload : function ($image) {
+          var next = $image.closest('li').next(),
+              prev = $image.closest('li').prev(),
+              next_a, prev_a,
+              next_img, prev_img;
+
+          if (next.length > 0) {
+            next_img = new Image();
+            next_a = next.find('a');
+            if (next_a.length > 0) {
+              next_img.src = next_a.attr('href');
+            } else {
+              next_img.src = next.find('img').attr('src');
+            }
+          }
+
+          if (prev.length > 0) {
+            prev_img = new Image();
+            prev_a = prev.find('a');
+            if (prev_a.length > 0) {
+              prev_img.src = prev_a.attr('href');
+            } else {
+              prev_img.src = prev.find('img').attr('src');
+            }
+          }
         },
 
         caption : function (container, $image) {
@@ -197,21 +283,34 @@
               container = clearing.closest('.clearing-container'),
               target_offset = target.position().left,
               thumbs_offset = clearing.position().left,
+              old_index = defaults.prev_index,
               direction = this.direction(clearing, current, target),
               left = parseInt(clearing.css('left'), 10),
+              width = target.outerWidth(),
               skip_shift;
 
-          if (/left/.test(direction)) {
-            methods.lock();
-            clearing.animate({left : left + target.outerWidth()}, 300, methods.unlock);
-          } else if (/right/.test(direction)) {
-            methods.lock();
-            clearing.animate({left : left - target.outerWidth()}, 300, methods.unlock);
+          // we use jQuery animate instead of CSS transitions because we
+          // need a callback to unlock the next animation
+
+          if (target.index() !== old_index && !/skip/.test(direction)){
+            if (/left/.test(direction)) {
+              methods.lock();
+              clearing.animate({left : left + width}, 300, methods.unlock);
+            } else if (/right/.test(direction)) {
+              methods.lock();
+              clearing.animate({left : left - width}, 300, methods.unlock);
+            }
           } else if (/skip/.test(direction)) {
+
+            // the target image is not adjacent to the current image, so
+            // do we scroll right or not
             skip_shift = target.index() - defaults.up_count;
+            methods.lock();
 
             if (skip_shift > 0) {
-              clearing.css({left : -(skip_shift * target.outerWidth())});
+              clearing.animate({left : -(skip_shift * width)}, 300, methods.unlock);
+            } else {
+              clearing.animate({left : 0}, 300, methods.unlock);
             }
           }
 
@@ -232,7 +331,7 @@
 
         direction : function ($el, current, target) {
           var lis = $el.find('li'),
-              li_width = lis.outerWidth(),
+              li_width = lis.outerWidth() + (lis.outerWidth() / 4),
               container = $('.clearing-container'),
               up_count = Math.floor(container.outerWidth() / li_width) - 1,
               shift_count = lis.length - up_count,
