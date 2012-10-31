@@ -306,6 +306,7 @@ function twentytwelve_body_class( $classes ) {
 }
 add_filter( 'body_class', 'twentytwelve_body_class' );
 function custom_taxonomies_terms_links() {
+	$return = null;
     global $post, $post_id;
     // get post by post id
     $post = &get_post($post->ID);
