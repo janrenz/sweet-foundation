@@ -25,14 +25,14 @@ add_image_size( 'sf_slider_gallery', 960, 540, true );
 function theme_styles()
 {
 	// Bring in Open Sans from Google fonts
-	wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+	wp_register_style( 'custom-font', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
 	// This is the compiled css file from SCSS
 	wp_register_style( 'foundation-core', get_template_directory_uri() . '/stylesheets/foundation.css', array(), '3.0', 'all' );
 	wp_register_style( 'foundation-app', get_template_directory_uri() . '/stylesheets/app.css', array(), '3.0', 'all' );
     // Load this from child theme if a child theme is used
     wp_register_style( 'foundation-style', get_stylesheet_directory_uri() . '/style.css', array(), '3.0', 'all' );
 
-	wp_enqueue_style( 'open-sans' );
+	wp_enqueue_style( 'custom-font' );
 	wp_enqueue_style( 'foundation-core' );
 	wp_enqueue_style( 'foundation-app' );
     wp_enqueue_style( 'foundation-style' );
@@ -41,10 +41,9 @@ function theme_styles()
 function foundation_js(){
 	// $handle, $src = false, $deps = array(), $ver = false, $in_footer = false
 
-
 	wp_register_script( 'foundation-core', get_template_directory_uri() . '/javascripts/foundation.min.js' );
     wp_enqueue_script( 'jquery', array(), '0.2', FALSE );
-	wp_enqueue_script( 'foundation-core', array(), '3.1', FALSE );
+	wp_enqueue_script( 'foundation-core', array(), '3.2', FALSE );
 	//jquery is already loaded
 	//wp_deregister_script( 'jquery' );
 
@@ -106,7 +105,7 @@ function sf_content_nav() {
 			'depth' => 0,
 			'fallback_cb' =>   'sf_fallback_menu' ,
 			'echo' => false,
-			'walker' => new sf_nav_walker_top
+			'walker' => new reverie_walker
 	);
 	$nav = wp_nav_menu($options);
 	 
