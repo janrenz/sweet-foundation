@@ -14,7 +14,7 @@ function sf_gallery_shortcode($attr) {
     $output = $outputCaptions = '';
 extract( shortcode_atts( array(
     'class' => 'featured', /* radius, round */
-    
+    'slidesize' => 'sf_slider_gallery'
     ), $attr ) );
 	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
 	//check if there is a post thumbnail
@@ -30,7 +30,7 @@ extract( shortcode_atts( array(
 			$output .= '<div data-caption="#orbit_'.$post->ID.'_'.$attachment->ID.'">';
 			//var_dump($attachment);  
 			$att_title = apply_filters( 'the_title' , $attachment->post_title );
-			$output .= wp_get_attachment_image( $attachment->ID , "sf_slider_gallery");
+			$output .= wp_get_attachment_image( $attachment->ID , $slidesize);
 			$output .= '</div>';
 			$outputCaptions .= '<span class="orbit-caption" id="orbit_'.$post->ID.'_'.$attachment->ID.'">'.$attachment->post_excerpt.'</span>';
     
