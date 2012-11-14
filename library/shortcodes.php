@@ -10,16 +10,22 @@ add_shortcode('gallery', 'sf_gallery_shortcode');
 
 function sf_gallery_shortcode($attr) {
 	global $post, $wp_locale;
+    $attachments = array();
     $output = $outputCaptions = '';
 extract( shortcode_atts( array(
     'class' => 'featured', /* radius, round */
     
     ), $attr ) );
 	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
-	$attachments = get_posts($args);
+	//check if there is a post thumbnail
+    if ( has_post_thumbnail() ) {
+		
+		$attachments[] = get_post(get_post_thumbnail_id());
+	} 
+	array_merge($attachments, get_posts($args));
 	if ($attachments) {
 	//$output = '<div >';
-		$output .= '<div class="row"><div class="twelve columns"><div id="" class="'.$class.'">';
+		$output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
 		foreach ( $attachments as $attachment ) {
 			$output .= '<div data-caption="#orbit_'.$post->ID.'_'.$attachment->ID.'">';
 			//var_dump($attachment);  
