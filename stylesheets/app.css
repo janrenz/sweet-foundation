@@ -151,6 +151,12 @@ font-size: 150%;
 #footer p {
 	margin-bottom: 7px;
 }
+#footer ul.menu li{
+	list-style: none;
+	float: left;
+	margin-left: 22px;
+	display: block;
+} 
 .featured { background: url(spinner.gif) center center #f4f4f4; height: 300px; }
 .featured img { display: none; }
 
