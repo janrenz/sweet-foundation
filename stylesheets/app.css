@@ -112,6 +112,9 @@ p{
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 }
+h1 {
+	font-size: 30px;
+}
 .nav-bar{
 	font-weight: 600;
 }
@@ -182,7 +185,13 @@ padding-top: 23px;
 .row div br {
 	display:auto;
 } 
-
+/**  SPECISAL additions */
+@media only screen and (max-width: 767px) { 
+	.mobile-no-padding-lr{
+		padding-left:0;
+		padding-right:0;
+	}
+}
 /* Social icons */
 
 /* font-face */
