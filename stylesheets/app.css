@@ -81,8 +81,7 @@ a img.aligncenter {
     padding: 0 4px 5px;
 } 
 body.admin-bar .top-bar-wrapper div.fixed{
-	top: 25px !important;
-
+	margin-top: 28px !important;
 } 
 #container{
 	overflow:hidden;	
@@ -90,9 +89,7 @@ body.admin-bar .top-bar-wrapper div.fixed{
 .padding-top-ten{
 	padding-top: 10px;
 }
-.top-bar-wrapper{
-	height: 45px;
-}
+
 body {
   background: white;
   font-size: 14px;
