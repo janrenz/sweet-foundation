@@ -140,7 +140,7 @@
 		if ($contentnav !== null && trim($contentnav) != ''){
 			?>
 		<div class="row">
-			<div class="twelve columns">
+			<div class="twelve columns mobile-no-padding-lr">
 		
 		<nav id="contentnav" class="top-nav">
 
