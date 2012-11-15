@@ -40,22 +40,16 @@ function theme_styles()
 
 function foundation_js(){
 	// $handle, $src = false, $deps = array(), $ver = false, $in_footer = false
+    wp_enqueue_script( 'jquery', array(), '0.2', FALSE );
 
 	wp_register_script( 'foundation-core', get_template_directory_uri() . '/javascripts/foundation.min.js' );
-    wp_enqueue_script( 'jquery', array(), '0.2', FALSE );
-	wp_enqueue_script( 'foundation-core', array(), '3.2', FALSE );
-	//jquery is already loaded
-	//wp_deregister_script( 'jquery' );
-
-
-	// wp_register_script( 'foundation-app', get_template_directory_uri() . '/javascripts/app.js' );
-	//  wp_enqueue_script( 'foundation-app', array(), '3.1', true );
+	wp_enqueue_script( 'foundation-core', array('jquery'), '3.2', FALSE );
+	wp_register_script( 'foundation-app', get_template_directory_uri() . '/javascripts/app.js' );
+	wp_enqueue_script( 'foundation-app', array('jquery'), '3.1', FALSE );
 }
 
 add_action('wp_enqueue_scripts', 'foundation_js');
 add_action('wp_enqueue_scripts', 'theme_styles');
-
-
 
 // the top bar left menu
 function sf_topbarleft_nav() {

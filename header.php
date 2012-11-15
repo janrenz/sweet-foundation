@@ -50,11 +50,13 @@
 	<div id="container">
 
 		<header class="header">
+		
 			<?php 
 
 			if (get_option( 'display_top_bar', 1 ) == 1)
 			{
 				?>
+
 			<div class="top-bar-wrapper">
 				<?php 
 				//get topbar classes
@@ -70,7 +72,7 @@
 
 				<div
 					class="<?php echo implode($sweet_foundation_topbar_classes, ' ');?>">
-					<div class="container top-bar">
+					<nav class="container top-bar">
 
 						<ul>
 							<li class="name"><h1>
@@ -81,7 +83,7 @@
 									</p>
 							
 							</li>
-							<li class="toggle-topbar"><a href="#"></a></li>
+							 <li class="toggle-topbar"><a href="#"></a></li>
 							
 						</ul>
 						<section>
@@ -101,7 +103,7 @@
 						</ul>
 						</section>
 						
-					</div>
+					</nav>
 				</div>
 
 			</div>

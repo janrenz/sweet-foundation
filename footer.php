@@ -30,7 +30,6 @@
 
 </div> <!-- end #container -->
 
-<script type="text/javascript" src="<?php echo (get_template_directory_uri());?>/javascripts/app.js"></script>
 </body>
 
 </html> <!-- end page. what a ride! -->
