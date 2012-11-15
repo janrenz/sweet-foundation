@@ -30,7 +30,10 @@
       var $el = $(this),
         button = $el.closest('.button.dropdown'),
         dropdown = $('> ul', button);
-      e.preventDefault();
+        if (e.target.nodeName !== "A"){
+          e.preventDefault();
+        }
+    	 
 
       // close other dropdowns
       closeDropdowns(config.dropdownAsToggle ? dropdown : '');
