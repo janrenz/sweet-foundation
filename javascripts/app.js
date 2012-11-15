@@ -4,7 +4,7 @@
   var $doc = $(document),
       Modernizr = window.Modernizr;
 
-  
+  $(document).ready(function(){
   $.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
   $.fn.foundationAccordion        ? $doc.foundationAccordion() : null;
   $.fn.foundationTooltips         ? $doc.foundationTooltips() : null;
@@ -28,7 +28,6 @@
   
   
     $("#featured").orbit();
-  
 
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
   // $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'both'});
@@ -44,5 +43,6 @@
       }, 0);
     });
   }
+  });
 
 })(jQuery, this);
