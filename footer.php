@@ -1,4 +1,13 @@
-<footer class="footer" role="contentinfo">
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the id=main div and all content after
+ *
+ * @package sf
+ * @since sf 1.0
+ */
+?><footer class="footer" role="contentinfo">
 
 	<div id="footer" class="full-width">
 		<div class="row">

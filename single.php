@@ -52,11 +52,9 @@
 			
 					</div> <!-- end #main -->
     
-					    <div
-    class="<?php echo ($sf_small_col);?> columns padding-top-ten sidebar" role="content">
-
+					
                     <?php get_sidebar(); ?>
-                </div>
+          
 
 				</div> <!-- end #inner-content -->
     

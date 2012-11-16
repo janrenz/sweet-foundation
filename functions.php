@@ -1,8 +1,73 @@
 <?php
-require_once('library/translation/translation.php'); // this comes turned off by default
+
+/**
+ * Make theme available for translation
+ * Translations can be filed in the /languages/ directory
+ * If you're building a theme based on sf, use a find and replace
+ * to change 'sf' to the name of your theme in all the template files
+ */
+load_theme_textdomain( 'sf', get_template_directory() . '/languages' );
+
+/** handle grid for sidebar, so this coulb be easily overwriten in child themes **/
 
 if (!isset($sf_big_col)) $sf_big_col = 'nine';
 if (!isset($sf_small_col)) $sf_small_col = 'three';
+
+
+if ( ! function_exists( 'sf_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+*
+* Note that this function is hooked into the after_setup_theme hook, which runs
+* before the init hook. The init hook is too late for some features, such as indicating
+* support post thumbnails.
+*
+* @since sf 1.0
+*/
+function sf_setup() {
+
+	/**
+	 * Custom template tags for this theme.
+	 */
+	require( get_template_directory() . '/inc/template-tags.php' );
+
+	/**
+	 * Custom functions that act independently of the theme templates
+	 */
+	//require( get_template_directory() . '/inc/tweaks.php' );
+
+	/**
+	 * Custom Theme Options
+	 */
+	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+
+	/**
+	 * Make theme available for translation
+	 * Translations can be filed in the /languages/ directory
+	 * If you're building a theme based on sf, use a find and replace
+	 * to change 'sf' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( 'sf', get_template_directory() . '/languages' );
+
+	/**
+	 * Add default posts and comments RSS feed links to head
+	 */
+	add_theme_support( 'automatic-feed-links' );
+
+	/**
+	 * Enable support for Post Thumbnails
+	 */
+	add_theme_support( 'post-thumbnails' );
+	
+	/**
+	 * Add support for the Aside Post Formats
+	 */
+	add_theme_support( 'post-formats', array( 'aside', ) );
+}
+endif; // sf_setup
+add_action( 'after_setup_theme', 'sf_setup' );
+
+
 
 add_filter( 'image_size_names_choose', 'custom_image_sizes_choose' );  
 function custom_image_sizes_choose( $sizes ) {  

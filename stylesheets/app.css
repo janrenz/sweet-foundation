@@ -1,3 +1,4 @@
+
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
@@ -80,16 +81,21 @@ a img.aligncenter {
     margin: 0;
     padding: 0 4px 5px;
 } 
+
+/*** Admin BAr **/
 body.admin-bar .top-bar-wrapper div.fixed{
 	margin-top: 28px !important;
 } 
+
 #container{
 	overflow:hidden;	
 }
 .padding-top-ten{
 	padding-top: 10px;
 }
-
+article ul {
+	 list-style-position: inside;
+}
 body {
   background: white;
   font-size: 14px;

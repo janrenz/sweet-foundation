@@ -1,4 +1,14 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying Archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package sf
+ * @since sf 1.0
+ */
+
+get_header(); ?>
 			
 			<div id="content">
 			
@@ -57,30 +67,15 @@
 							        </ul>
 					    	    </nav>
 					        <?php } ?>
-					
-					    <?php else : ?>
-					
-    					    <article id="post-not-found" class="hentry clearfix">
-    						    <header class="article-header">
-    							    <h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
-    					    	</header>
-    						    <section class="entry-content">
-    							    <p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
-        						</section>
-    	    					<footer class="article-footer">
-    		    				    <p><?php _e("This is the error message in the archive.php template.", "bonestheme"); ?></p>
-    			    			</footer>
-    				    	</article>
+						<?php else : ?>
+						<?php get_template_part( 'no-results', 'archive' ); ?>
 					
 					    <?php endif; ?>
 			
     				</div> <!-- end #main -->
     
-	    			    <div
-    class="<?php echo ($sf_small_col);?> columns padding-top-ten sidebar" role="content">
-
                     <?php get_sidebar(); ?>
-                </div>
+         
                 
                 </div> <!-- end #inner-content -->
                 

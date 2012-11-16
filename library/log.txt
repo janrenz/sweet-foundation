@@ -6,12 +6,10 @@ http://www.bdisco.de/wordpress-themes/sweet-foundation
 
 Credits:
 
-uses some stuff from bones theme 
-htp://themble.com/bones/
-
 inspired by wp-foundation by 320degrees
 http://320press.com/wp-foundation/
 
+based on _s starter theme
 
 Author: Jan Renz
 
@@ -19,6 +17,9 @@ Author: Jan Renz
 SWEET FOUNDATION CHANGE LOG & HISTORY
 ******************************************************************/
 
+/* v1 first public version */
+- rewriten most templates using _s
+- updated foundation to 3.2.2
 
 /* v0.2 initial version */
 - support theming for main nav
