@@ -18,9 +18,9 @@ SWEET FOUNDATION CHANGE LOG & HISTORY
 ******************************************************************/
 
 /* v1.0 first public version */
-- rewriten most templates using _s
+- rewritten templates using _s
 - updated foundation to 3.2.2
-- supporting jetpacks infinite scroll (beta)
+- supporting jetpacks infinite scroll
 
 /* v0.2 initial version */
 - support theming for main nav
