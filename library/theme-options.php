@@ -87,6 +87,26 @@ class SFThemeOptions
 				'type'      => 'option'
 				//
 		) );#
+		$wp_customize->add_setting('hide_404_categories', array(
+				'default'   => false,
+				'type'      => 'option'
+				//
+		) );
+		$wp_customize->add_setting('hide_404_recent_posts', array(
+				'default'   => false,
+				'type'      => 'option'
+				//
+		) );
+		$wp_customize->add_setting('hide_404_archives', array(
+				'default'   => false,
+				'type'      => 'option'
+				//
+		) );
+		$wp_customize->add_setting('hide_404_tags', array(
+				'default'   => false,
+				'type'      => 'option'
+				//
+		) );
 		$wp_customize->add_setting('display_header_area_on_subpages', array(
 				'default'   => false,
 				'type'      => 'option'
@@ -152,6 +172,26 @@ class SFThemeOptions
 		$wp_customize->add_control( 'hide_topbar_search', array(
 				'label'   => 'Hide Search in Top Bar',
 				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'hide_404_categories', array(
+				'label'   => 'Hide Categories in 404 page',
+				'section' => 'theme_element_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'hide_404_recent_posts', array(
+				'label'   => 'Hide recent Posts in 404 page',
+				'section' => 'theme_element_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'hide_404_archives', array(
+				'label'   => 'Hide Archives in 404 page',
+				'section' => 'theme_element_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'hide_404_tags', array(
+				'label'   => 'Hide Tags in 404 page',
+				'section' => 'theme_element_settings',
 				'type'    => 'checkbox',
 		) );
 		$wp_customize->add_control( 'topbar_is_fixed', array(
@@ -280,7 +320,7 @@ class SFThemeOptions
 		?>
 				<script type="text/javascript">
 			                jQuery('document').ready(function(){
-			                    jQuery('body').css('margin-bottom', jQuery('#footer').height()+'px');
+			                    jQuery('body').css('margin-bottom', (jQuery('#footer').height()+10)+'px');
 			                });
 			    </script>
 			<?php 
