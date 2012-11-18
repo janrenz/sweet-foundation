@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Make theme available for translation
- * Translations can be filed in the /languages/ directory
- * If you're building a theme based on sf, use a find and replace
- * to change 'sf' to the name of your theme in all the template files
- */
-load_theme_textdomain( 'sf', get_template_directory() . '/languages' );
 
 /** handle grid for sidebar, so this coulb be easily overwriten in child themes **/
 
@@ -36,11 +29,7 @@ function sf_setup() {
 	 */
 	//require( get_template_directory() . '/inc/tweaks.php' );
 
-	/**
-	 * Custom Theme Options
-	 */
-	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
-
+	
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
@@ -48,7 +37,13 @@ function sf_setup() {
 	 * to change 'sf' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'sf', get_template_directory() . '/languages' );
-
+	
+	/**
+	 * Add theme support for jetpacks infinte scroll
+	 */
+	add_theme_support( 'infinite-scroll', array(
+			'container'    => 'posts_wrapper',
+	) );
 	/**
 	 * Add default posts and comments RSS feed links to head
 	 */
@@ -63,6 +58,10 @@ function sf_setup() {
 	 * Add support for the Aside Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', ) );
+	
+	add_theme_support( 'custom-background' );
+	
+	add_theme_support( 'post-thumbnails' );
 }
 endif; // sf_setup
 add_action( 'after_setup_theme', 'sf_setup' );
@@ -77,8 +76,7 @@ function custom_image_sizes_choose( $sizes ) {
     return array_merge( $sizes, $custom_sizes );  
 }  
 
-add_theme_support( 'custom-background' );
-add_theme_support( 'post-thumbnails' );
+
 
 add_image_size( 'sf_slider_gallery', 960, 540, true );
 

@@ -50,10 +50,11 @@ get_header(); ?>
 					    	    <span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
 					        </h1>
 					    <?php } ?>
-
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
+						<div id="posts_wrapper">
 					    <?php get_template_part( 'content', get_post_format() ); ?>
+						</div>
 					
 					    <?php endwhile; ?>	
 					

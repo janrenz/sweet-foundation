@@ -4,7 +4,7 @@
  *
  * @link http://codex.wordpress.org/Theme_Customization_API
  */
-class FoundationThemeOptions
+class SFThemeOptions
 {
 
 	/**
@@ -204,8 +204,6 @@ class FoundationThemeOptions
 				'section'    => 'theme_header_settings',
 				'settings'   => 'footer_textcolor',
 		) ) );
-
-
 	}
 
 	/**
@@ -215,82 +213,66 @@ class FoundationThemeOptions
 	 *
 	 * @see add_action('wp_head',$func)
 	 */
-	public static function render()
-	{
+	public static function sf_css_render(){
 		?>
-<!--Customizer CSS-->
-<style type="text/css">
-<?php self::generate_css ('.header-wrapper ', 'background-color ', 'header_bgcolor
-	');  ?> <?php self::generate_css ('#footer ', 'background-color ', 'footer_bgcolor
-	');  ?> <?php self::generate_css ('#footer,#footer a ', 'color ', 'footer_textcolor
-	');  ?> <?php self::generate_css ('div.alert-box ', 'background-color ',
-	'standard_box_color ');  ?> <?php self::generate_css ('ul.sub-nav li.current_page_item
-	', 'border-color ', 'header_bgcolor ');  ?> <?php self::generate_css
-	('a,a:visited,a:active,a:hover ', 'color ', 'link_color ');  ?> <?php self::generate_css
-	('.header-wrapper .header-name a,.header-wrapper .header-description ',
-	'color ', 'header_hlcolor ');  ?> <?php self::generate_css ('ul.nav-bar,ul.nav-bar li
-	', 'background-color ', 'nav_color ');  ?> <?php self::generate_css
-	('ul.nav-bar,ul.nav-bar li a,ul.nav-bar li.active a:hover  ', 'color ',
-	'nav_text_color ');  ?> <?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover
-	', 'background-color ', 'nav_active_color ');  ?> <?php self::generate_css
-	('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover,.nav-bar li:last-child
-	', 'border-color ', 'nav_active_color ');  ?> <?php self::generate_css
-	('ul.nav-bar li ', 'border-color ', 'nav_color ');  ?> <?php self::generate_css
-	('body,html ', 'background-color ', 'body_bgcolor ');  ?> <?php
-           if  (get_option (  'hide_comments_closed_msg ')  == 1){ ?>
-	.nocomments {
-	display: none;
-}
-
-<?php
- 
-}
-if  (get_option (  'footer_is_fixed ')  == 1){ ?> .footer {
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	z-index: 100;
-}
-
-<?php
- 
-}
-?>
-<?php
-           if  (get_option (  'hide_byline ')  == 1){ ?> .byline {
-	display: none;
-}
-
-<?php
- 
-}
-?>
-<?php //hide title in topbar
-           if  (get_option (  'hide_title_top_bar ')  == 1){ ?> .top-bar #logo
-	{
-	display: none;
-}
-<?php
- 
-}
-?>
-</style>
-<!--/Customizer CSS-->
-<?php  
-
-if (get_option( 'footer_is_fixed') == 1){
-	?>
-<script type="text/javascript">
-                jQuery('document').ready(function(){
-                    jQuery('body').css('margin-bottom', jQuery('#footer').height()+'px');
-                });
-            </script>
-<?php } ?>
-
-
-<?php 
-	}
+		<!--Customizer CSS -->
+		<style type="text/css">
+		<?php self::generate_css ('.header-wrapper ', 'background-color', 'header_bgcolor'); ?>
+		<?php self::generate_css ('#footer ', 'background-color', 'footer_bgcolor'); ?>
+		<?php self::generate_css ('#footer,#footer a ', 'color', 'footer_textcolor'); ?> 
+		<?php self::generate_css ('div.alert-box ', 'background-color','standard_box_color'); ?>
+		<?php self::generate_css ('ul.sub-nav li.current_page_item', 'border-color', 'header_bgcolor'); ?>
+		<?php self::generate_css ('a,a:visited,a:active,a:hover ', 'color', 'link_color');  ?>
+		<?php self::generate_css ('.header-wrapper .header-name a,.header-wrapper .header-description ','color', 'header_hlcolor');  ?>
+		<?php self::generate_css ('ul.nav-bar,ul.nav-bar li', 'background-color', 'nav_color ');  ?>
+		<?php self::generate_css ('ul.nav-bar,ul.nav-bar li a,ul.nav-bar li.active a:hover  ', 'color', 'nav_text_color');  ?>
+		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover ', 'background-color', 'nav_active_color ');  ?>
+		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover,.nav-bar li:last-child ', 'border-color', 'nav_active_color'); ?>
+		<?php self::generate_css ('ul.nav-bar li ', 'border-color', 'nav_color'); ?>
+		<?php self::generate_css ('body,html ', 'background-color', 'body_bgcolor');  ?>
+		<?php
+		if  (get_option ( 'hide_comments_closed_msg ' )  == 1){ ?>
+		.nocomments {
+			display: none;
+		}
+		<?php 
+		}
+		if  (get_option (  'footer_is_fixed ')  == 1){ ?> 
+		.footer {
+			position: fixed;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			z-index: 100;
+		}
+	
+		<?php 
+		}
+		if  (get_option (  'hide_byline ')  == 1){ ?> 
+		.byline {
+			display: none;
+		}
+	 	<?php 
+		}
+	 	//hide title in topbar
+		if  (get_option (  'hide_title_top_bar ')  == 1){ ?> .top-bar #logo
+		{
+			display: none;
+		}
+		<?php } ?>
+		</style>
+		<!--/Customizer CSS-->
+		<?php  
+		if (get_option ('footer_is_fixed') == 1){
+		?>
+				<script type="text/javascript">
+			                jQuery('document').ready(function(){
+			                    jQuery('body').css('margin-bottom', jQuery('#footer').height()+'px');
+			                });
+			    </script>
+			<?php 
+		} //end if footer is fixed
+	}//end of function render
 
 
 
@@ -328,7 +310,7 @@ if (get_option( 'footer_is_fixed') == 1){
 		}
 		return $return;
 	}
+}//end of class
 
-}
-add_action( 'customize_register'    , array( 'FoundationThemeOptions' , 'register' ) );
-add_action( 'wp_head'               , array( 'FoundationThemeOptions' , 'render' ) );
+add_action( 'customize_register'    , array( 'SFThemeOptions' , 'register' ) );
+add_action( 'wp_head'               , array( 'SFThemeOptions' , 'sf_css_render' ) );

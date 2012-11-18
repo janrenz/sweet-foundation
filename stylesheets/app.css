@@ -93,7 +93,7 @@ body.admin-bar .top-bar-wrapper div.fixed{
 .padding-top-ten{
 	padding-top: 10px;
 }
-article ul {
+article ul, .sidebar ul {
 	 list-style-position: inside;
 }
 body {
