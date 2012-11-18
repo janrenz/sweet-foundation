@@ -50,14 +50,14 @@ get_header(); ?>
 					    	    <span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
 					        </h1>
 					    <?php } ?>
+						<div id="posts_wrapper">
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
-						<div id="posts_wrapper">
 					    <?php get_template_part( 'content', get_post_format() ); ?>
-						</div>
 					
 					    <?php endwhile; ?>	
-					
+						</div>
+						<div id="pagenavigation_wrapper">
 					        <?php if (function_exists('foundation_page_navi')) { ?>
 						        <?php foundation_page_navi(); ?>
 					        <?php } else { ?>
@@ -68,6 +68,7 @@ get_header(); ?>
 							        </ul>
 					    	    </nav>
 					        <?php } ?>
+					     </div>
 						<?php else : ?>
 						<?php get_template_part( 'no-results', 'archive' ); ?>
 					

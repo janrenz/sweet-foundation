@@ -82,7 +82,7 @@ a img.aligncenter {
     padding: 0 4px 5px;
 } 
 
-/*** Admin BAr **/
+/** Admin aAr **/
 body.admin-bar .top-bar-wrapper div.fixed{
 	margin-top: 28px !important;
 } 
@@ -93,8 +93,9 @@ body.admin-bar .top-bar-wrapper div.fixed{
 .padding-top-ten{
 	padding-top: 10px;
 }
-article ul, .sidebar ul {
-	 list-style-position: inside;
+
+article ul > li, .sidebar ul > li{
+	margin-left:18px;
 }
 body {
   background: white;
@@ -167,9 +168,9 @@ font-size: 150%;
 .featured.orbit img { display: block; }
 
 .divide-space {
-margin-top: 45px;
-border-top: 1px solid #CCC;
-padding-top: 23px;
+	margin-top: 45px;
+	border-top: 1px solid #CCC;
+	padding-top: 23px;
 }
 .alert-box h1, .alert-box h2, .alert-box h3, .alert-box h4, .alert-box h5, .alert-box h6 {
 	color: #ffffff;
@@ -185,6 +186,15 @@ padding-top: 23px;
 }
 .comment-subscription-form label{
 	display:inline; /* overwrite block settng from foundation */
+}
+
+/* Hides navigation links when infinite scroll is active */
+.infinite-scroll #pagenavigation_wrapper {
+	display: none;
+}
+/* Shows the footer again in case all posts have been loaded */
+.infinity-end.neverending #footer {
+	/* display: block; */
 }
 
 /* fix for br ins shortcodes */

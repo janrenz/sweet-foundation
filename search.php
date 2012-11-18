@@ -19,7 +19,7 @@ get_header(); ?>
 					<header class="page-header">
 						<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'sweet-foundation' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 					</header>
-					
+					<div id="posts_wrapper">
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -32,7 +32,19 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
-				
+				</div>
+				<div id="pagenavigation_wrapper">
+				        <?php if (function_exists('foundation_page_navi')) { ?>
+					        <?php foundation_page_navi(); ?>
+				        <?php } else { ?>
+					        <nav class="wp-prev-next">
+						        <ul class="clearfix">
+							        <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
+							        <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
+						        </ul>
+				    	    </nav>
+				        <?php } ?>
+				     </div>
 			<?php else : ?>
 					<article id="post-0" class="post no-results not-found">
 						<header class="entry-header">

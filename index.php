@@ -8,7 +8,7 @@
     <div class="<?php echo ($sf_big_col);?> columns" role="content">
 
 				    <div id="main" class="eightcol first clearfix" role="main">
-
+						<div id="posts_wrapper">
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -36,7 +36,8 @@
 					    </article> <!-- end article -->
 					
 					    <?php endwhile; ?>	
-					
+						</div>
+						<div id="pagenavigation_wrapper">
 					        <?php if (function_exists('foundation_page_navi')) { ?>
 					            <?php foundation_page_navi(); ?>
 					        <?php } else { ?>
@@ -47,7 +48,7 @@
 					                </ul>
 					            </nav>
 					        <?php } ?>		
-					
+						</div>
 					    <?php else : ?>
 					    
 					        <article id="post-not-found" class="hentry clearfix">

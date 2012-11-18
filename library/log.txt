@@ -2,7 +2,7 @@ Sweet Foundation - A Foundation based Wordpress Theme
 
 For more information, please visit:
 
-http://www.bdisco.de/wordpress-themes/sweet-foundation
+http://www.bdisco.de/sweet-foundation
 
 Credits:
 
@@ -17,10 +17,10 @@ Author: Jan Renz
 SWEET FOUNDATION CHANGE LOG & HISTORY
 ******************************************************************/
 
-/* v1 first public version */
+/* v1.0 first public version */
 - rewriten most templates using _s
 - updated foundation to 3.2.2
-- supporting jetpacks infinite scroll 
+- supporting jetpacks infinite scroll (beta)
 
 /* v0.2 initial version */
 - support theming for main nav

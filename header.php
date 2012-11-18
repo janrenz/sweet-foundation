@@ -92,6 +92,7 @@
 						
 							<ul class="right">
 							<?php sf_topbarright_nav(); ?>
+						<?php 	if  (get_option ( 'hide_topbar_search' )  != 1){ ?>
 						<li class="divider"></li>
 						    <li class="search">
 						  <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
@@ -100,6 +101,7 @@
 
 						  </form>
 						</li>
+						<?php } ?>
 						</ul>
 						</section>
 						

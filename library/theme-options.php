@@ -75,6 +75,12 @@ class SFThemeOptions
 				'type'      => 'option'
 				//'transport' => 'postMessage',
 		) );#
+		//hide_topbar_search
+		$wp_customize->add_setting('hide_topbar_search', array(
+				'default'   => false,
+				'type'      => 'option'
+				//'transport' => 'postMessage',
+		) );#
 		//hide_title_top_bar
 		$wp_customize->add_setting('hide_title_top_bar', array(
 				'default'   => false,
@@ -108,7 +114,7 @@ class SFThemeOptions
 				'priority'       => 2,
 		) );
 		$wp_customize->add_section( 'theme_element_settings', array(
-				'title'          => 'Elements',
+				'title'          => 'Hide Elements',
 				'priority'       => 20,
 		) );
 
@@ -139,6 +145,12 @@ class SFThemeOptions
 		) );
 		$wp_customize->add_control( 'hide_title_top_bar', array(
 				'label'   => 'Hide Title in Top Bar',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		//hide_topbar_search
+		$wp_customize->add_control( 'hide_topbar_search', array(
+				'label'   => 'Hide Search in Top Bar',
 				'section' => 'theme_header_settings',
 				'type'    => 'checkbox',
 		) );
@@ -229,15 +241,16 @@ class SFThemeOptions
 		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover ', 'background-color', 'nav_active_color ');  ?>
 		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover,.nav-bar li:last-child ', 'border-color', 'nav_active_color'); ?>
 		<?php self::generate_css ('ul.nav-bar li ', 'border-color', 'nav_color'); ?>
-		<?php self::generate_css ('body,html ', 'background-color', 'body_bgcolor');  ?>
-		<?php
+		<?php self::generate_css ('body,html ', 'background-color', 'body_bgcolor');  	
+		
+	
 		if  (get_option ( 'hide_comments_closed_msg ' )  == 1){ ?>
 		.nocomments {
 			display: none;
 		}
 		<?php 
 		}
-		if  (get_option (  'footer_is_fixed ')  == 1){ ?> 
+		if  (get_option (  'footer_is_fixed')  == 1){ ?> 
 		.footer {
 			position: fixed;
 			bottom: 0px;
@@ -248,14 +261,14 @@ class SFThemeOptions
 	
 		<?php 
 		}
-		if  (get_option (  'hide_byline ')  == 1){ ?> 
+		if  (get_option (  'hide_byline')  == 1){ ?> 
 		.byline {
 			display: none;
 		}
 	 	<?php 
 		}
 	 	//hide title in topbar
-		if  (get_option (  'hide_title_top_bar ')  == 1){ ?> .top-bar #logo
+		if  (get_option (  'hide_title_top_bar' )  == 1){ ?> .top-bar #logo
 		{
 			display: none;
 		}
@@ -263,7 +276,7 @@ class SFThemeOptions
 		</style>
 		<!--/Customizer CSS-->
 		<?php  
-		if (get_option ('footer_is_fixed') == 1){
+		if (get_option ( 'footer_is_fixed' ) == 1){
 		?>
 				<script type="text/javascript">
 			                jQuery('document').ready(function(){
