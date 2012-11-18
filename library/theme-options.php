@@ -236,9 +236,9 @@ class SFThemeOptions
 		<?php self::generate_css ('ul.sub-nav li.current_page_item', 'border-color', 'header_bgcolor'); ?>
 		<?php self::generate_css ('a,a:visited,a:active,a:hover ', 'color', 'link_color');  ?>
 		<?php self::generate_css ('.header-wrapper .header-name a,.header-wrapper .header-description ','color', 'header_hlcolor');  ?>
-		<?php self::generate_css ('ul.nav-bar,ul.nav-bar li', 'background-color', 'nav_color ');  ?>
+		<?php self::generate_css ('ul.nav-bar,ul.nav-bar li', 'background-color', 'nav_color');  ?>
 		<?php self::generate_css ('ul.nav-bar,ul.nav-bar li a,ul.nav-bar li.active a:hover  ', 'color', 'nav_text_color');  ?>
-		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover ', 'background-color', 'nav_active_color ');  ?>
+		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover ', 'background-color', 'nav_active_color');  ?>
 		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover,.nav-bar li:last-child ', 'border-color', 'nav_active_color'); ?>
 		<?php self::generate_css ('ul.nav-bar li ', 'border-color', 'nav_color'); ?>
 		<?php self::generate_css ('body,html ', 'background-color', 'body_bgcolor');  	
