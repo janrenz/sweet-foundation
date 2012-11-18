@@ -272,6 +272,18 @@ class SFThemeOptions
 			    </script>
 			<?php 
 		} //end if footer is fixed
+		//topbar_is_fixed
+		if (get_option ('topbar_is_fixed') == 1){
+			?>
+						<script type="text/javascript">
+					                jQuery('document').ready(function(){
+						                var tb_height =jQuery('.header .top-bar').height();
+					                    jQuery('body').css('margin-top', jQuery('body').css('margin-top')+tb_height);
+					                });
+					    </script>
+					<?php 
+				}
+		
 	}//end of function render
 
 

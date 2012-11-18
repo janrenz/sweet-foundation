@@ -105,21 +105,18 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
-body, p, h1, h2, h3, h4, h5, h6 {
+body, p, h1, h2, h3, h4, h5, h6, ul, ol {
 	 font-family: 'Open Sans', "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
- 
-}
-p{
-	font-weight:300;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 300;
+	 font-weight: 300;
 }
 h1 {
 	font-size: 30px;
 }
 .top-bar ul{
 	position: relative;
+}
+.header-wrapper h1, .header-wrapper h2, .header-wrapper h3, .header-wrapper h4{
+ 	 font-weight: 400;
 }
 .nav-bar{
 	font-weight: 600;

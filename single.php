@@ -4,7 +4,7 @@
 
 				<div class="row">
 			
-					<div id="main" class="<?php echo ($sf_big_col);?> columns" role="main">
+					<div id="main" class="<?php echo ($sf_big_col);?> columns postswrapper" role="main">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
