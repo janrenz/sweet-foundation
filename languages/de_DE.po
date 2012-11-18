@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Sweet Foundation v0.3\n"
+"Project-Id-Version: Sweet Foundation v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-11-16 12:11:48+0000\n"
+"PO-Revision-Date: 2012-11-18 22:48:38+0000\n"
 "Last-Translator: Jan Renz (@jprberlin)\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Es sieht so aus als konnte nichts gefunden werden. Vieöleicht möchten 
 #: 404.php:27
 #@ sf
 msgid "Most Used Categories"
-msgstr "Meistebenutze Kategorien"
+msgstr "Meistbenutzte Kategorien"
 
 #. translators: %1$s: smilie
 #: 404.php:35
@@ -41,44 +41,16 @@ msgstr "Meistebenutze Kategorien"
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Versuchen Sie es in den Monatsarchiven. %1$s"
 
-#: archive.php:21
-#@ bonestheme
-msgid "Posts Categorized:"
-msgstr ""
-
-#: archive.php:26
-#@ bonestheme
-msgid "Posts Tagged:"
-msgstr ""
-
-#: archive.php:35
-#@ bonestheme
-msgid "Posts By:"
-msgstr ""
-
-#: archive.php:40
-#@ bonestheme
-msgid "Daily Archives:"
-msgstr ""
-
-#: archive.php:45
-#@ bonestheme
-msgid "Monthly Archives:"
-msgstr ""
-
-#: archive.php:50
-#@ bonestheme
-msgid "Yearly Archives:"
-msgstr ""
-
-#: archive.php:65
-#: index.php:45
+#: archive.php:102
+#: index.php:46
+#: search.php:42
 #@ bonestheme
 msgid "&laquo; Older Entries"
 msgstr ""
 
-#: archive.php:66
-#: index.php:46
+#: archive.php:104
+#: index.php:47
+#: search.php:43
 #@ bonestheme
 msgid "Newer Entries &raquo;"
 msgstr ""
@@ -202,7 +174,7 @@ msgstr "1 Kommentar"
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: header.php:98
+#: header.php:99
 #@ default
 msgid "Search"
 msgstr ""
@@ -233,7 +205,7 @@ msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Hinterlassen Sie ein
 #, php-format
 #@ sf
 msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
-msgstr "Kommenatre sind geschlossen, aber sie k&ouml;nnen ein Trackback hinterlassen: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Kommentare sind geschlossen, aber sie k&ouml;nnen ein Trackback hinterlassen: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL\" rel=\"trackback\">Trackback URL</a>."
 
 #: image.php:96
 #@ sf
@@ -305,7 +277,7 @@ msgstr "%1$s um %2$s"
 #, php-format
 #@ sf
 msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
-msgstr "Ver&oumL;ffentlicht um <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> bvon <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "Ver&ouml;ffentlicht um <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> von <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
 #: inc/template-tags.php:132
 #, php-format
@@ -331,76 +303,76 @@ msgstr ""
 msgid "filed under"
 msgstr ""
 
-#: index.php:55
+#: index.php:56
 #: single.php:41
 #@ bonestheme
 msgid "Oops, Post Not Found!"
 msgstr ""
 
-#: index.php:58
+#: index.php:59
 #: single.php:44
 #@ bonestheme
 msgid "Uh Oh. Something is missing. Try double checking things."
 msgstr ""
 
-#: index.php:61
+#: index.php:62
 #@ bonestheme
 msgid "This is the error message in the index.php template."
 msgstr ""
 
-#: library/theme-options.php:156
+#: library/theme-options.php:168
 #@ default
 msgid "Link Color"
 msgstr ""
 
-#: library/theme-options.php:162
+#: library/theme-options.php:174
 #@ default
 msgid "Box Color"
 msgstr ""
 
-#: library/theme-options.php:168
+#: library/theme-options.php:180
 #@ default
 msgid "Main Navigation Color"
 msgstr ""
 
-#: library/theme-options.php:173
+#: library/theme-options.php:185
 #@ default
 msgid "Main Navigation Text Color"
 msgstr ""
 
-#: library/theme-options.php:178
+#: library/theme-options.php:190
 #@ default
 msgid "Main Navigation Active Color"
 msgstr ""
 
-#: library/theme-options.php:183
+#: library/theme-options.php:195
 #@ default
 msgid "Header Background Color"
 msgstr ""
 
-#: library/theme-options.php:188
+#: library/theme-options.php:200
 #@ default
 msgid "Header Text Color"
 msgstr ""
 
-#: library/theme-options.php:193
+#: library/theme-options.php:205
 #@ default
 msgid "Footer Background Color"
 msgstr ""
 
-#: library/theme-options.php:198
+#: library/theme-options.php:210
 #@ default
 msgid "Body Background Color"
 msgstr ""
 
-#: library/theme-options.php:203
+#: library/theme-options.php:215
 #@ default
 msgid "Footer Text Color"
 msgstr ""
 
 #: no-result.php:14
 #: no-results.php:14
-#: search.php:39
+#: search.php:51
 #@ sf
 #@ sweet-foundation
 msgid "Nothing Found"
@@ -417,7 +389,7 @@ msgstr "Bereit für dein ersten Artikel? <a href=\"%1$s\">Jetzt loslegen</a>."
 #: no-results.php:24
 #@ sf
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Leider wurdne keine Ergebnisse zu dieser Suche gefunden. Probieren Sie es bitte mit anderen Suhcbegriffen noch einmal."
+msgstr "Leider wurden keine Ergebnisse zu dieser Suche gefunden. Probieren Sie es bitte mit anderen Suhcbegriffen noch einmal."
 
 #: no-result.php:29
 #: no-results.php:29
@@ -431,7 +403,7 @@ msgstr "Das wonach Sie Suchten konnte nicht gefunden werden. Vielleicht hilft ei
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:43
+#: search.php:55
 #@ sweet-foundation
 msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
 msgstr ""
@@ -440,4 +412,45 @@ msgstr ""
 #@ bonestheme
 msgid "This is the error message in the single.php template."
 msgstr ""
+
+#: archive.php:26
+#, php-format
+#@ sf
+msgid "Category Archives: %s"
+msgstr "Kategorie Archiv: %s"
+
+#: archive.php:29
+#, php-format
+#@ sf
+msgid "Tag Archives: %s"
+msgstr "Tag Archive: %s"
+
+#: archive.php:36
+#, php-format
+#@ sf
+msgid "Author Archives: %s"
+msgstr "Autoren Archiv: %s"
+
+#: archive.php:44
+#, php-format
+#@ sf
+msgid "Daily Archives: %s"
+msgstr "Tages Archives: %s"
+
+#: archive.php:47
+#, php-format
+#@ sf
+msgid "Monthly Archives: %s"
+msgstr "Montatsarchiv: %s"
+
+#: archive.php:50
+#, php-format
+#@ sf
+msgid "Yearly Archives: %s"
+msgstr "Jahresarchiv: %s"
+
+#: archive.php:53
+#@ sf
+msgid "Archives"
+msgstr "Archive"
 
