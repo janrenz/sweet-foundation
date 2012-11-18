@@ -362,3 +362,7 @@ font-size: 150%;
 .foundicon-wordpress:before {
   content: "\f01d";
 }
+/** Fix for li in boxes */
+article #ppc-box ul > li{
+	margin-left: 0px;
+}
