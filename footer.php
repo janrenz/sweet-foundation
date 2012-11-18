@@ -7,8 +7,8 @@
  * @package sf
  * @since sf 1.0
  */
-?><footer class="footer" role="contentinfo">
-
+?>
+<footer class="footer" role="contentinfo">
 	<div id="footer" class="full-width">
 		<div class="row">
 			<div class="four columns">
@@ -19,8 +19,7 @@
 			</div>
 			<div class="eight columns">
 				<ul class="link-list right">
-	<?php if ( is_active_sidebar( 'footer1' ) ) :
-	?>
+	<?php if ( is_active_sidebar( 'footer1' ) ) :?>
 
 	<?php dynamic_sidebar('footer1'); ?>
 

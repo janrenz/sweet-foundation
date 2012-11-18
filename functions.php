@@ -43,6 +43,8 @@ function sf_setup() {
 	 */
 	add_theme_support( 'infinite-scroll', array(
 			'container'    => 'posts_wrapper',
+			'footer'    => false,
+				
 	) );
 	/**
 	 * Add default posts and comments RSS feed links to head
