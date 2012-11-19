@@ -44,29 +44,29 @@
     });
   }
   });
-  $(document).load(function(){
+  jQuery('document').ready(function(){
           //banner size fix
           /**
            * Give all objects and embed taht should remin ther html size  a surrounding div with the banner class
            * 
            */
-    $('.banner embed').each(
+    jQuery('.banner embed').each(
         function(){
            
             jQuery(this).css('height', jQuery(this).attr('height')+'px');
         }
       );
-        $('.banner embed').each(
+        jQuery('.banner embed').each(
         function(){
             jQuery(this).css('width', jQuery(this).attr('width')+'px');
         }
       );
-        $('.banner object').each(
+        jQuery('.banner object').each(
         function(){
             jQuery(this).css('height', jQuery(this).attr('height')+'px');
         }
       );
-        $('.banner object').each(
+        jQuery('.banner object').each(
         function(){
             jQuery(this).css('width', jQuery(this).attr('width')+'px');
         }
@@ -75,3 +75,4 @@
   });
 
 })(jQuery, this);
+
