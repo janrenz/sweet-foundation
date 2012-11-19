@@ -62,12 +62,11 @@ function sf_setup() {
 	add_theme_support( 'post-formats', array( 'aside', ) );
 	
 	add_theme_support( 'custom-background' );
-	
+	add_editor_style ( '/stylesheets/foundation.css' );
+	add_editor_style ( '/stylesheets/app.css' );
 }
 endif; // sf_setup
 add_action( 'after_setup_theme', 'sf_setup' );
-
-
 
 add_filter( 'image_size_names_choose', 'custom_image_sizes_choose' );  
 function custom_image_sizes_choose( $sizes ) {  

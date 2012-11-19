@@ -94,8 +94,11 @@ body.admin-bar .top-bar-wrapper div.fixed{
 	padding-top: 10px;
 }
 
-article ul > li, .sidebar ul > li{
+article ul , .sidebar ul, #tinymce ul {
 	margin-left:18px;
+}
+#tinymce{
+	padding:10px;
 }
 body {
   background: white;
@@ -112,6 +115,9 @@ body, p, h1, h2, h3, h4, h5, h6, ul, ol {
 }
 h1 {
 	font-size: 30px;
+}
+p a {
+	font-weight: 400;
 }
 .top-bar ul{
 	position: relative;
