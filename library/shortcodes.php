@@ -14,16 +14,21 @@ function sf_gallery_shortcode($attr) {
     $output = $outputCaptions = '';
 extract( shortcode_atts( array(
     'class' => 'featured', /* radius, round */
-    'slidesize' => 'sf_slider_gallery'
+    'slidesize' => 'sf_slider_gallery',
+	'minwidth' => 0,
+	'minheight' => 0
     ), $attr ) );
 	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
 	//check if there is a post thumbnail
     if ( has_post_thumbnail() ) {
-		
-		$attachments[] = get_post(get_post_thumbnail_id());
+   		 $__post = get_post(get_post_thumbnail_id());
+    	$imgmeta = wp_get_attachment_metadata( $__post->ID );
+    	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
+			$attachments[] = $__post;
+    	}
 	} 
 	array_merge($attachments, get_posts($args));
-	if ($attachments) {
+	if (count($attachments)>0) {
 	//$output = '<div >';
 		$output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
 		foreach ( $attachments as $attachment ) {
