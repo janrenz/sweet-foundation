@@ -18,25 +18,21 @@ SWEET FOUNDATION CHANGE LOG & HISTORY
 ******************************************************************/
 
 /* v1.0 first public version */
-- rewritten templates using _s
-- updated foundation to 3.2.2
-- supporting jetpacks infinite scroll
-
-/* v0.2 initial version */
-- support theming for main nav
-- support widget area in footer
-- "no comments" text can be hidden
-- byline can be hidden
-- site name in header is clickable
-- added wordpress default css to theme
-- support slider on top, slider in content and no slider template for pages
-
-/* v0.1 initial version */
-- support for button shortcode
-- support for alert shortcode
-- support for panel shortcode
-- support for grid shortcodes
-- uses foundation 3.1
-- theme configuration through wordpress theme editor
+[added] editor css
+[changed] rewritten templates using _s
+[changed] updated foundation to 3.2.2
+[added] supporting jetpacks infinite scroll
+[added] support theming for main nav
+[added] support widget area in footer
+[added] "no comments" text can be hidden
+[added] byline can be hidden
+[added] site name in header is clickable
+[added] support slider on top, slider in content and no slider template for pages
+[added] support for button shortcode
+[added] support for alert shortcode
+[added] support for panel shortcode
+[added] support for grid shortcodes
+[added] uses foundation 3.1
+[added] theme configuration through wordpress theme editor
 
 
