@@ -52,13 +52,13 @@
            */
     jQuery('.banner embed').each(
         function(){
-           
             jQuery(this).css('height', jQuery(this).attr('height')+'px');
         }
       );
         jQuery('.banner embed').each(
         function(){
             jQuery(this).css('width', jQuery(this).attr('width')+'px');
+            jQuery(this).css('max-width', jQuery(this).attr('width')+'px');
         }
       );
         jQuery('.banner object').each(
@@ -69,6 +69,7 @@
         jQuery('.banner object').each(
         function(){
             jQuery(this).css('width', jQuery(this).attr('width')+'px');
+            jQuery(this).css(max-width', jQuery(this).attr('width')+'px');
         }
       );
 
