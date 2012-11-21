@@ -69,7 +69,7 @@
         jQuery('.banner object').each(
         function(){
             jQuery(this).css('width', jQuery(this).attr('width')+'px');
-            jQuery(this).css(max-width', jQuery(this).attr('width')+'px');
+            jQuery(this).css('max-width', jQuery(this).attr('width')+'px');
         }
       );
 
