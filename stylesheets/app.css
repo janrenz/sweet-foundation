@@ -101,7 +101,9 @@ html[xmlns] .clearfix {
 * html .clearfix {
 	height: 1%;
 }
-
+.clear{
+	clear:both;
+}
 /** Admin aAr **/
 body.admin-bar .top-bar-wrapper div.fixed{
 	margin-top: 28px !important;
