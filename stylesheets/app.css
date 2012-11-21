@@ -81,6 +81,26 @@ a img.aligncenter {
     margin: 0;
     padding: 0 4px 5px;
 } 
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
 
 /** Admin aAr **/
 body.admin-bar .top-bar-wrapper div.fixed{
