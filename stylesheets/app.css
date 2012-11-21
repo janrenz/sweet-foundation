@@ -104,6 +104,9 @@ html[xmlns] .clearfix {
 .clear{
 	clear:both;
 }
+.banner img{
+	width:auto;
+}
 /** Admin aAr **/
 body.admin-bar .top-bar-wrapper div.fixed{
 	margin-top: 28px !important;
