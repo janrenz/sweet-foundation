@@ -3,454 +3,491 @@ msgstr ""
 "Project-Id-Version: Sweet Foundation v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-11-18 22:48:38+0000\n"
-"Last-Translator: Jan Renz (@jprberlin)\n"
+"PO-Revision-Date: 2012-11-26 14:41+0100\n"
+"Last-Translator: erhhrteh <ergt@edewde.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../\n"
-"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
 
+# @ sf
 #: 404.php:16
-#@ sf
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oh. Diese Seite konnte nicht gefunden werden."
 
+# @ sf
 #: 404.php:20
-#@ sf
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr "Es sieht so aus als konnte nichts gefunden werden. Vieöleicht möchten Sie es mit einem der folgenden Links oder einer Suche probieren?"
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Es sieht so aus als konnte nichts gefunden werden. Vielleicht möchten Sie es "
+"mit einem der folgenden Links oder einer Suche probieren?"
 
+# @ sf
 #: 404.php:27
-#@ sf
 msgid "Most Used Categories"
 msgstr "Meistbenutzte Kategorien"
 
+# @ sf
 #. translators: %1$s: smilie
 #: 404.php:35
 #, php-format
-#@ sf
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Versuchen Sie es in den Monatsarchiven. %1$s"
 
-#: archive.php:102
-#: index.php:46
-#: search.php:42
-#@ bonestheme
+# @ bonestheme
+#: archive.php:102 index.php:46 search.php:42
 msgid "&laquo; Older Entries"
 msgstr ""
 
-#: archive.php:104
-#: index.php:47
-#: search.php:43
-#@ bonestheme
+# @ bonestheme
+#: archive.php:104 index.php:47 search.php:43
 msgid "Newer Entries &raquo;"
 msgstr ""
 
+# @ sf
 #: comments.php:32
 #, php-format
-#@ sf
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Ein Gedanke zu &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s Gedanken zu &ldquo;%2$s&rdquo;"
 
-#: comments.php:39
-#: comments.php:59
-#@ sf
+# @ sf
+#: comments.php:39 comments.php:59
 msgid "Comment navigation"
 msgstr "Kommentarnavigation"
 
-#: comments.php:40
-#: comments.php:60
-#@ sf
+# @ sf
+#: comments.php:40 comments.php:60
 msgid "&larr; Older Comments"
 msgstr "&larr; &Auml;ltere Kommentare"
 
-#: comments.php:41
-#: comments.php:61
-#@ sf
+# @ sf
+#: comments.php:41 comments.php:61
 msgid "Newer Comments &rarr;"
 msgstr "Neuere Kommentare &rarr;"
 
+# @ sf
 #: comments.php:71
-#@ sf
 msgid "Comments are closed."
 msgstr "Kein Kommentieren mehr m&ouml;glich."
 
-#: content-page.php:17
-#: content-single.php:19
-#: content.php:26
-#: image.php:86
-#@ sf
+# @ sf
+#: content-page.php:17 content-single.php:19 content.php:26 image.php:86
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: content-page.php:18
-#: content-single.php:57
-#: content.php:59
-#: image.php:34
+# @ sf
+#: content-page.php:18 content-single.php:57 content.php:59 image.php:34
 #: image.php:100
-#@ sf
 msgid "Edit"
 msgstr "Bearbeiten"
 
+# @ sf
 #. translators: used between list items, there is a space after the comma
-#: content-single.php:25
-#: content-single.php:28
-#: content.php:34
-#: content.php:44
-#@ sf
+#: content-single.php:25 content-single.php:28 content.php:34 content.php:44
 msgid ", "
 msgstr ","
 
+# @ sf
 #: content-single.php:33
 #, php-format
-#@ sf
-msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Dieser Eintrag wurde mit  %2$s gekennzeichnet. Bookmarken Sie diesen <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a>."
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dieser Eintrag wurde mit  %2$s gekennzeichnet. Bookmarken Sie diesen <a href="
+"\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a>."
 
+# @ sf
 #: content-single.php:35
 #, php-format
-#@ sf
-msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Bookmarken Sie den <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a>."
+msgid ""
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"Bookmarken Sie den <a href=\"%3$s\" title=\"Permalink to %4$s\" rel="
+"\"bookmark\">Link</a>."
 
+# @ sf
 #: content-single.php:41
 #, php-format
-#@ sf
-msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Dieser Artikel wurde unter %1$s ver&ouml;ffentlicht mit den Schlagw&ouml;rten %2$s. Bookmarken Sie den <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a>."
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dieser Artikel wurde unter %1$s ver&ouml;ffentlicht mit den Schlagw&ouml;"
+"rten %2$s. Bookmarken Sie den <a href=\"%3$s\" title=\"Permalink to %4$s\" "
+"rel=\"bookmark\">Link</a>."
 
+# @ sf
 #: content-single.php:43
 #, php-format
-#@ sf
-msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Dieser Artikel wurde unter %1$s ver&ouml;ffentlicht. Bookmarken Sie den <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a>."
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dieser Artikel wurde unter %1$s ver&ouml;ffentlicht. Bookmarken Sie den <a "
+"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a>."
 
+# @ sf
 #: content.php:10
 #, php-format
-#@ sf
 msgid "Permalink to %s"
 msgstr "Link zu %s"
 
+# @ sf
 #: content.php:25
-#@ sf
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Lesen Sie hier weiter <span class=\"meta-nav\">&rarr;</span>"
 
+# @ sf
 #: content.php:38
 #, php-format
-#@ sf
 msgid "Posted in %1$s"
 msgstr "Ver&ouml;ffentlicht unter %1$s"
 
+# @ sf
 #: content.php:49
 #, php-format
-#@ sf
 msgid "Tagged %1$s"
 msgstr "Gekennzeichnet mit  %1$s"
 
+# @ sf
 #: content.php:56
-#@ sf
 msgid "Leave a comment"
 msgstr "Hinterlassen Sie ein Kommentar"
 
+# @ sf
 #: content.php:56
-#@ sf
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
+# @ sf
 #: content.php:56
-#@ sf
 msgid "% Comments"
 msgstr "% Kommentare"
 
+# @ default
 #: header.php:99
-#@ default
 msgid "Search"
 msgstr ""
 
+# @ sf
 #: image.php:24
 #, php-format
-#@ sf
-msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
-msgstr "Ver&ouml;ffentlicht <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> um <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-"
+"size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
+"\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+"Ver&ouml;ffentlicht <span class=\"entry-date\"><time class=\"entry-date\" "
+"datetime=\"%1$s\" pubdate>%2$s</time></span> um <a href=\"%3$s\" title="
+"\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title="
+"\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
 
+# @ sf
 #: image.php:38
-#@ sf
 msgid "&larr; Previous"
 msgstr "&larr; Vorheriger"
 
+# @ sf
 #: image.php:39
-#@ sf
 msgid "Next &rarr;"
 msgstr "N&aumlchster &rarr;"
 
+# @ sf
 #: image.php:92
 #, php-format
-#@ sf
-msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
-msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Hinterlassen Sie ein Kommentar\">Hinterlassen Sie ein Kommentar</a> oder eine Trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL für den Artikel\" rel=\"trackback\">Trackback URL</a>."
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Hinterlassen Sie ein "
+"Kommentar\">Hinterlassen Sie ein Kommentar</a> oder eine Trackback: <a class="
+"\"trackback-link\" href=\"%s\" title=\"Trackback URL für den Artikel\" rel="
+"\"trackback\">Trackback URL</a>."
 
+# @ sf
 #: image.php:94
 #, php-format
-#@ sf
-msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
-msgstr "Kommentare sind geschlossen, aber sie k&ouml;nnen ein Trackback hinterlassen: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL\" rel=\"trackback\">Trackback URL</a>."
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+"Kommentare sind geschlossen, aber sie k&ouml;nnen ein Trackback "
+"hinterlassen: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL"
+"\" rel=\"trackback\">Trackback URL</a>."
 
+# @ sf
 #: image.php:96
-#@ sf
-msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
-msgstr "Trackbacks sind geschlossen, aber Sie k&ouml;nnen <a class=\"comment-link\" href=\"#respond\" title=\"kommentieren\">ein Kommentar hinterlassen</a>."
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+"Trackbacks sind geschlossen, aber Sie k&ouml;nnen <a class=\"comment-link\" "
+"href=\"#respond\" title=\"kommentieren\">ein Kommentar hinterlassen</a>."
 
+# @ sf
 #: image.php:98
-#@ sf
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Kommentare und Trackbacks sind geschlossen."
 
+# @ sf
 #: inc/template-tags.php:39
-#@ sf
 msgid "Post navigation"
 msgstr "Post Navigation"
 
+# @ sf
 #: inc/template-tags.php:43
-#@ sf
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
 
+# @ sf
 #: inc/template-tags.php:44
-#@ sf
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
+# @ sf
 #: inc/template-tags.php:49
-#@ sf
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Artikel"
 
+# @ sf
 #: inc/template-tags.php:53
-#@ sf
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Neuere Artikel <span class=\"meta-nav\">&rarr;</span>"
 
+# @ sf
 #: inc/template-tags.php:78
-#@ sf
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:78
-#: inc/template-tags.php:101
-#@ sf
+# @ sf
+#: inc/template-tags.php:78 inc/template-tags.php:101
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
+# @ sf
 #: inc/template-tags.php:88
 #, php-format
-#@ sf
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sagt:</span>"
 
+# @ sf
 #: inc/template-tags.php:91
-#@ sf
 msgid "Your comment is awaiting moderation."
 msgstr "Ihr Kommentar wartet auf seine Freischaltung."
 
+# @ sf
 #. translators: 1: date, 2: time
 #: inc/template-tags.php:99
 #, php-format
-#@ sf
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
+# @ sf
 #: inc/template-tags.php:126
 #, php-format
-#@ sf
-msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
-msgstr "Ver&ouml;ffentlicht um <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> von <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgid ""
+"Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
+"\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+"Ver&ouml;ffentlicht um <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark"
+"\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span "
+"class=\"byline\"> von <span class=\"author vcard\"><a class=\"url fn n\" "
+"href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
+# @ sf
 #: inc/template-tags.php:132
 #, php-format
-#@ sf
 msgid "View all posts by %s"
 msgstr "Zeige alle Artikel von %s"
 
-#: index.php:20
-#: single.php:17
-#@ bonestheme
+# @ bonestheme
+#: index.php:20 single.php:17
 msgid "Posted"
 msgstr ""
 
-#: index.php:20
-#: single.php:17
-#@ bonestheme
+# @ bonestheme
+#: index.php:20 single.php:17
 msgid "by"
 msgstr ""
 
-#: index.php:20
-#: single.php:17
-#@ bonestheme
+# @ bonestheme
+#: index.php:20 single.php:17
 msgid "filed under"
 msgstr ""
 
-#: index.php:56
-#: single.php:41
-#@ bonestheme
+# @ bonestheme
+#: index.php:56 single.php:41
 msgid "Oops, Post Not Found!"
 msgstr ""
 
-#: index.php:59
-#: single.php:44
-#@ bonestheme
+# @ bonestheme
+#: index.php:59 single.php:44
 msgid "Uh Oh. Something is missing. Try double checking things."
 msgstr ""
 
+# @ bonestheme
 #: index.php:62
-#@ bonestheme
 msgid "This is the error message in the index.php template."
 msgstr ""
 
+# @ default
 #: library/theme-options.php:168
-#@ default
 msgid "Link Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:174
-#@ default
 msgid "Box Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:180
-#@ default
 msgid "Main Navigation Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:185
-#@ default
 msgid "Main Navigation Text Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:190
-#@ default
 msgid "Main Navigation Active Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:195
-#@ default
 msgid "Header Background Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:200
-#@ default
 msgid "Header Text Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:205
-#@ default
 msgid "Footer Background Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:210
-#@ default
 msgid "Body Background Color"
 msgstr ""
 
+# @ default
 #: library/theme-options.php:215
-#@ default
 msgid "Footer Text Color"
 msgstr ""
 
-#: no-result.php:14
-#: no-results.php:14
-#: search.php:51
-#@ sf
-#@ sweet-foundation
+# @ sf
+# @ sweet-foundation
+#: no-result.php:14 no-results.php:14 search.php:51
 msgid "Nothing Found"
 msgstr "Nichts gefunden"
 
-#: no-result.php:20
-#: no-results.php:20
+# @ sf
+#: no-result.php:20 no-results.php:20
 #, php-format
-#@ sf
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "Bereit für dein ersten Artikel? <a href=\"%1$s\">Jetzt loslegen</a>."
 
-#: no-result.php:24
-#: no-results.php:24
-#@ sf
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Leider wurden keine Ergebnisse zu dieser Suche gefunden. Probieren Sie es bitte mit anderen Suhcbegriffen noch einmal."
+# @ sf
+#: no-result.php:24 no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Leider wurden keine Ergebnisse zu dieser Suche gefunden. Probieren Sie es "
+"bitte mit anderen Suchbegriffen noch einmal."
 
-#: no-result.php:29
-#: no-results.php:29
-#@ sf
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Das wonach Sie Suchten konnte nicht gefunden werden. Vielleicht hilft eine Suche."
+# @ sf
+#: no-result.php:29 no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Das wonach Sie Suchten konnte nicht gefunden werden. Vielleicht hilft eine "
+"Suche."
 
+# @ sweet-foundation
 #: search.php:20
 #, php-format
-#@ sweet-foundation
 msgid "Search Results for: %s"
 msgstr ""
 
+# @ sweet-foundation
 #: search.php:55
-#@ sweet-foundation
-msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
 msgstr ""
 
+# @ bonestheme
 #: single.php:47
-#@ bonestheme
 msgid "This is the error message in the single.php template."
 msgstr ""
 
+# @ sf
 #: archive.php:26
 #, php-format
-#@ sf
 msgid "Category Archives: %s"
 msgstr "Kategorie Archiv: %s"
 
+# @ sf
 #: archive.php:29
 #, php-format
-#@ sf
 msgid "Tag Archives: %s"
 msgstr "Tag Archive: %s"
 
+# @ sf
 #: archive.php:36
 #, php-format
-#@ sf
 msgid "Author Archives: %s"
 msgstr "Autoren Archiv: %s"
 
+# @ sf
 #: archive.php:44
 #, php-format
-#@ sf
 msgid "Daily Archives: %s"
 msgstr "Tages Archives: %s"
 
+# @ sf
 #: archive.php:47
 #, php-format
-#@ sf
 msgid "Monthly Archives: %s"
 msgstr "Montatsarchiv: %s"
 
+# @ sf
 #: archive.php:50
 #, php-format
-#@ sf
 msgid "Yearly Archives: %s"
 msgstr "Jahresarchiv: %s"
 
+# @ sf
 #: archive.php:53
-#@ sf
 msgid "Archives"
 msgstr "Archive"
-
