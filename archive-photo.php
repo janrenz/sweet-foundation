@@ -11,11 +11,11 @@
 get_header(); ?>
 
 <section id="primary"
-	class="content-area">
-	<div id="content" class="site-content" role="main">
-		<div class="row">
+    class="content-area">
+    <div  class="site-content" role="main">
+        <div class="row">
 
-			<div id="main" class="twelve columns" role="main">
+            <div id="main" class="twelve columns" role="main">
                 <?php
                 if ( is_active_sidebar('top') ) {
                     // Display some text
@@ -26,68 +26,75 @@ get_header(); ?>
                     // Display none
                 };
                 ?>
-				<?php if ( have_posts() ) : ?>
-
-				<?php /* Start the Loop */ ?>
-				<div id="posts_wrapper">
-                         <img src="<?php 
-                         get_field('photo');
-                         ?>"></img>
-				</div>
-				<script type="javascript">
-				    
-    			 var $container  = $('#posts_wrapper'),
-                        $imgs       = $container.find('img').hide(),
-                        totalImgs   = $imgs.length,
-                        cnt         = 0;
+                <?php if ( have_posts() ) : ?>
+                
+                <div id="posts_wrapper" class="am-container sf-gallery ">
+                   
+                <?php /* Start the Loop */ ?>
+                 <?php while ( have_posts() ) : the_post(); ?>
+                        <?php 
+                         $img = get_field('bild');
+                         $img = wp_get_attachment_image_src( $img['id'], 'medium' ); 
+                         ?>
+                          <a href="#"><img data-width="<?php echo($img[1]);?>" data-height="<?php echo($img[2]);?>" src="<?php echo($img[0]);?>"></img></a>
+                      <a href="#"><img data-width="<?php echo($img[1]);?>" data-height="<?php echo($img[2]);?>" src="<?php echo($img[0]);?>"></img></a>
+                          
+                        
+               <?php  endwhile; ?>
                     
-                    $imgs.each(function(i) {
-                        var $img    = $(this);
-                        $('<img/>').load(function() {
-                            ++cnt;
-                            if( cnt === totalImgs ) {
-                                $imgs.show();
-                                $container.montage({
-                                    fillLastRow             : true,
-                                    alternateHeight         : true,
-                                    alternateHeightRange    : {
-                                        min : 90,
-                                        max : 240
-                                    }
-                                });
-                      
-                            }
-                        }).attr('src',$img.attr('src'));
-                    }); 
-				</script>
-				<?php //sf_content_nav( 'nav-below' ); ?>
+                </div>
+                
+                <script type="text/javascript">
+             jQuery(function($) {
+        
+                var $container  = $('#posts_wrapper'),
+                    $imgs       = $container.find('img').show(),
+                    totalImgs   = $imgs.length,
+                    cnt         = 0;
+                
+                $imgs.each(function(i) {
+                    var $img    = $(this);
+                    jQuery('<img/>').load(function() {
+                        ++cnt;
+                        if( cnt === totalImgs ) {
+                            $imgs.show();
+                            
+                            $container.montage({
+                               maxh:200,
+                                margin: 0
+                            });
+                        }
+                    }).attr('src',$img.attr('src'));
+                }); 
+});
+                </script>
+                <?php //sf_content_nav( 'nav-below' ); ?>
 
-				<?php else : ?>
+                <?php else : ?>
 
-				<?php get_template_part( 'no-results', 'archive' ); ?>
+                <?php get_template_part( 'no-results', 'archive' ); ?>
 
-				<?php endif; ?>
-				<div id="pagenavigation_wrapper">
-				<?php if (function_exists('foundation_page_navi')) { ?>
-				<?php foundation_page_navi(); ?>
-				<?php } else { ?>
-				<nav class="wp-prev-next">
-					<ul class="clearfix">
-						<li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "sf")) ?>
-						</li>
-						<li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "sf")) ?>
-						</li>
-					</ul>
-				</nav>
-				<?php } ?>
-				</div>
-			</div>
-			<?php get_sidebar(); ?>
-			<!-- #content .site-content -->
-		</div>
-	</div>
-	<!-- #primary .content-area -->
+                <?php endif; ?>
+                <div id="pagenavigation_wrapper">
+                <?php if (function_exists('foundation_page_navi')) { ?>
+                <?php foundation_page_navi(); ?>
+                <?php } else { ?>
+                <nav class="wp-prev-next">
+                    <ul class="clearfix">
+                        <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "sf")) ?>
+                        </li>
+                        <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "sf")) ?>
+                        </li>
+                    </ul>
+                </nav>
+                <?php } ?>
+                </div>
+            </div>
+            <!-- #content .site-content -->
+        </div>
+    </div>
+    <!-- #primary .content-area -->
 
-	
+    
 </section>
 <?php get_footer(); ?>

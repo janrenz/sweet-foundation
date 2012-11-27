@@ -16,7 +16,16 @@ get_header(); ?>
 		<div class="row">
 
 			<div id="main" class="<?php echo ($sf_big_col);?> columns" role="main">
-
+                <?php
+                if ( is_active_sidebar('top') ) {
+                    // Display some text
+                    echo('<div class="row"><div class="twelve columns">');
+                    get_sidebar();
+                    echo('</div></div>');
+                } else {
+                    // Display none
+                };
+                ?>
 				<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
