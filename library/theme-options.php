@@ -36,8 +36,8 @@ class SFThemeOptions
 				'default'   => '#bbbbbb',
 				//'transport' => 'postMessage',
 		) );
-		$wp_customize->add_setting('body_bgcolor', array(
-				'default'   => '#ffffff',
+		$wp_customize->add_setting('textcolor', array(
+				'default'   => '#000000',
 				//'transport' => 'postMessage',
 		) );
 		$wp_customize->add_setting('footer_textcolor', array(
@@ -243,13 +243,13 @@ class SFThemeOptions
 		) ) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bgcolor', array(
 				'label'      => __( 'Footer Background Color' ),
-				'section'    => 'coltheme_header_settingsors',
+				'section'    => 'theme_header_settings',
 				'settings'   => 'footer_bgcolor',
 		) ) );
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_bgcolor', array(
-				'label'      => __( 'Body Background Color' ),
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'textcolor', array(
+				'label'      => __( 'Text Color' ),
 				'section'    => 'colors',
-				'settings'   => 'body_bgcolor',
+				'settings'   => 'textcolor',
 		) ) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_textcolor', array(
 				'label'      => __( 'Footer Text Color' ),
@@ -281,7 +281,7 @@ class SFThemeOptions
 		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover ', 'background-color', 'nav_active_color');  ?>
 		<?php self::generate_css ('ul.nav-bar li.active,ul.nav-bar li.active:hover,ul.nav-bar li:hover,.nav-bar li:last-child ', 'border-color', 'nav_active_color'); ?>
 		<?php self::generate_css ('ul.nav-bar li ', 'border-color', 'nav_color'); ?>
-		<?php self::generate_css ('body,html ', 'background-color', 'body_bgcolor');  	
+		<?php self::generate_css ('body,html, h1, h2, h3, h4, h5, h6, label', 'color', 'textcolor');  	
 		
 	
 		if  (get_option ( 'hide_comments_closed_msg ' )  == 1){ ?>
