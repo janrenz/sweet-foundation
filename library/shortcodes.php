@@ -58,7 +58,7 @@ function sf_slider_shortcode($attr) {
     $attachments = array();
     $output = $outputCaptions = '';
 extract( shortcode_atts( array(
-    'class' => 'featured', /* radius, round */
+    'class' => '', /* radius, round */
     'slidesize' => 'sf_slider_gallery',
 	'minwidth' => 0,
 	'minheight' => 0

@@ -39,8 +39,6 @@ Template Name: Gallery
             </div> <!-- end #content -->
 
 <?php get_footer(); ?>
-
-?>
         <script type="text/javascript">
             jQuery(function($) {
 
