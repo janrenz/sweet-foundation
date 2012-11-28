@@ -51,8 +51,8 @@ Template Name: Gallery
                             $imgs.show();
 
                             $container.montage({
-                                maxh : 500,
-                                margin : 5
+                                maxh : 320,
+                                margin : 0
                             });
                         }
                     }).attr('src', $img.attr('src'));

@@ -60,7 +60,7 @@
 	
 	$.Montage.defaults 			= {
         maxh                    : 250,  // the maximum height that a picture should have.
-        margin: 5
+        margin: 0
     };
 	
 	$.Montage.prototype 		= {
@@ -69,6 +69,7 @@
             var h = 0;
             for (var i = 0; i < images.length; ++i) {
                 h +=  $(images[i]).data('width') / ($(images[i]).data('height'));
+                h +=  this.options.margin;
             }
             return width / h;
         },
@@ -78,7 +79,7 @@
             $(images[i]).css({
               width: height * $(images[i]).data('width') / $(images[i]).data('height'),
               height: height,
-              marginRight:6
+              marginRight: 6
             });
             if (i == images.length -1){
                  $(images[i]).css({
