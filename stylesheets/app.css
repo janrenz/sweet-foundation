@@ -217,6 +217,12 @@ font-size: 150%;
 .sf_gallery ul li{
 	float: left;
 }
+.sf_gallery div.visible-img, #sf_gallery div.visible-img, 
+.sf_gallery div.clearing-assembled ,.sf_gallery div.clearing-blackout, .sf_gallery div.clearing-container
+#sf_gallery div.clearing-assembled ,#sf_gallery div.clearing-blackout, #sf_gallery div.clearing-container
+{
+	float: none;
+}
 .divide-space {
 	margin-top: 45px;
 	border-top: 1px solid #CCC;

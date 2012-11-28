@@ -41,7 +41,7 @@
 <script type="text/javascript">
             jQuery(document).ready(function($) {
                 
-                var $container = $('#sf_gallery'), $imgs = $container.find('img').show(), totalImgs = $imgs.length, cnt = 0;
+                var $container = $('.sf_gallery_container'), $imgs = $container.find('img').show(), totalImgs = $imgs.length, cnt = 0;
 
                 $imgs.each(function(i) {
                     var $img = $(this);

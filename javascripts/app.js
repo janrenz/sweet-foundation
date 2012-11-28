@@ -23,8 +23,8 @@
   $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
   
     
-    $.fn.foundationTabs             ? $doc.foundationTabs() : null;
-    
+    $.fn.foundationTabs           ? $doc.foundationTabs() : null;
+    $.fn.foundationClearing       ? $doc.foundationClearing() : null;
   
   
     $("#featured").orbit();
