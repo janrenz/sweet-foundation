@@ -224,8 +224,14 @@ font-size: 150%;
 	float: none;
 }
 .sf_gallery div.clearing-container img.sf_gallery_single_image, #sf_gallery div.clearing-container img.sf_gallery_single_image{
-	height: auto !important;
+	height: 150px !important;
 	width: auto !important;
+}
+.clearing-assembled .clearing-container ul[data-clearing] li {
+	width: auto;
+}
+.clearing-assembled .clearing-container ul[data-clearing] li img {
+	min-width: 0px !important;
 }
 .divide-space {
 	margin-top: 45px;
