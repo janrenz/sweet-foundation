@@ -203,14 +203,19 @@ font-size: 150%;
 	margin-bottom: 4px;
 	outline:none;
 }
-.sf-gallery {
+.sf_gallery {
 	float:left;
 	position:relative;
 	overflow:hidden;
 }
-.sf-gallery div img{
+.sf_gallery div img{
 	outline:none;
-
+}
+.sf_gallery ul{
+	margin-left: 0px;
+}
+.sf_gallery ul li{
+	float: left;
 }
 .divide-space {
 	margin-top: 45px;
