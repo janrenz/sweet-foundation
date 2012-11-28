@@ -14,7 +14,7 @@ function sf_gallery_shortcode($attr) {
     $attachments = array();
     $output = $outputCaptions = '';
 extract( shortcode_atts( array(
-    'class' => 'featured', /* radius, round */
+    'class' => '', /* radius, round */
     'slidesize' => 'medium',
     'minwidth' => 0,
     'minheight' => 0
@@ -31,18 +31,19 @@ extract( shortcode_atts( array(
     $attachments = array_merge($attachments, get_posts($args));
     if (count($attachments)>0) {
     //$output = '<div >';
-        $output .= '<div class="row"><div class="twelve columns"><div id="sf_gallery" class="'.$class.'">';
+        $output .= '<div class="row"><div class="twelve columns"><div id="sf_gallery" class="sf_gallery '.$class.'">';
         foreach ( $attachments as $attachment ) {
             $output .= '<div data-caption="#orbit_'.$post->ID.'_'.$attachment->ID.'">';
             //var_dump($attachment);  
             $att_title = apply_filters( 'the_title' , $attachment->post_title );
-            $output .= wp_get_attachment_image( $attachment->ID , $slidesize);
+            $img =  wp_get_attachment_image_src( $attachment->ID , $slidesize);
+            $output .=  '<img data-width="'.$img[1].'" data-height="'.$img[2].'" src="'.$img[0].'"></img>';
             $output .= '</div>';
             $outputCaptions .= '<span class="orbit-caption" id="orbit_'.$post->ID.'_'.$attachment->ID.'">'.$attachment->post_excerpt.'</span>';
     
         }
         //$output .= '</ul>';
-    $output .= '</div></div></div>';
+    $output .= '</div><div class="clear"></div></div></div>';
         
     }
     
@@ -58,7 +59,7 @@ function sf_slider_shortcode($attr) {
     $attachments = array();
     $output = $outputCaptions = '';
 extract( shortcode_atts( array(
-    'class' => '', /* radius, round */
+    'class' => 'featured', /* radius, round */
     'slidesize' => 'sf_slider_gallery',
 	'minwidth' => 0,
 	'minheight' => 0

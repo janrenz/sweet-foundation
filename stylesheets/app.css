@@ -198,6 +198,20 @@ font-size: 150%;
 .featured.orbit { background: none; }
 .featured.orbit img { display: block; }
 
+.sf_gallery div, #sf_gallery div{
+	float:left;
+	margin-bottom: 4px;
+	outline:none;
+}
+.sf-gallery {
+	float:left;
+	position:relative;
+	overflow:hidden;
+}
+.sf-gallery div img{
+	outline:none;
+
+}
 .divide-space {
 	margin-top: 45px;
 	border-top: 1px solid #CCC;

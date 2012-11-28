@@ -107,6 +107,8 @@ function foundation_js(){
 
 	wp_register_script( 'foundation-core', get_template_directory_uri() . '/javascripts/foundation.min.js' );
 	wp_enqueue_script( 'foundation-core', array('jquery'), '3.2', FALSE );
+    wp_register_script( 'sf-gallery', get_template_directory_uri() . '/javascripts/jquery.montage.js' );
+    wp_enqueue_script( 'sf-gallery', array('jquery'), '3.1', FALSE );
 	wp_register_script( 'foundation-app', get_template_directory_uri() . '/javascripts/app.js' );
 	wp_enqueue_script( 'foundation-app', array('jquery'), '3.1', FALSE );
 }

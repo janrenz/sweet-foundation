@@ -39,10 +39,10 @@ Template Name: Gallery
             </div> <!-- end #content -->
 
 <?php get_footer(); ?>
-        <script type="text/javascript">
-            jQuery(function($) {
-
-                var $container = $('#posts_wrapper'), $imgs = $container.find('img').show(), totalImgs = $imgs.length, cnt = 0;
+       <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                
+                var $container = $('#sf_gallery'), $imgs = $container.find('img').show(), totalImgs = $imgs.length, cnt = 0;
 
                 $imgs.each(function(i) {
                     var $img = $(this);
@@ -51,11 +51,11 @@ Template Name: Gallery
                             $imgs.show();
 
                             $container.montage({
-                                maxh : 200,
-                                margin : 0
+                                maxh : 500,
+                                margin : 5
                             });
                         }
                     }).attr('src', $img.attr('src'));
                 });
-            }); 
+            });
 </script>
