@@ -12,7 +12,7 @@ div.aligncenter {
 }
 
 .alignright {
-    float:right;
+    float:right !important;
     margin: 5px 0 20px 20px;
 }
 
