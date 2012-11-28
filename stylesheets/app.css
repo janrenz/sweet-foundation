@@ -223,6 +223,10 @@ font-size: 150%;
 {
 	float: none;
 }
+.sf_gallery div.clearing-container img.sf_gallery_single_image, #sf_gallery div.clearing-container img.sf_gallery_single_image{
+	height: auto !important;
+	width: auto !important;
+}
 .divide-space {
 	margin-top: 45px;
 	border-top: 1px solid #CCC;

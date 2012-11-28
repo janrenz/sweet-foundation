@@ -38,7 +38,7 @@ extract( shortcode_atts( array(
             $att_title = apply_filters( 'the_title' , $attachment->post_title );
             $img =  wp_get_attachment_image_src( $attachment->ID , $slidesize);
             $fullImg = wp_get_attachment_image_src( $attachment->ID , "full");
-            $output .=  '<a href="'.$fullImg[0].'"><img data-caption="'.$attachment->post_excerpt.'" data-width="'.$img[1].'" data-height="'.$img[2].'" src="'.$img[0].'"></img>';
+            $output .=  '<a href="'.$fullImg[0].'"><img class="sf_gallery_single_image" data-caption="'.$attachment->post_excerpt.'" data-width="'.$img[1].'" data-height="'.$img[2].'" src="'.$img[0].'"></img>';
             $output .= '</a></li>';
           
     

@@ -45,6 +45,9 @@
   }
   });
   jQuery(document).ready(function(){
+	  
+	 
+	  
           //banner size fix
           /**
            * Give all objects and embed taht should remin ther html size  a surrounding div with the banner class
