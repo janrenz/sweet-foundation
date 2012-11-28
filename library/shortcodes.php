@@ -8,7 +8,52 @@
 remove_shortcode('gallery', 'gallery_shortcode');
 add_shortcode('gallery', 'sf_gallery_shortcode');
 
+
 function sf_gallery_shortcode($attr) {
+    global $post, $wp_locale;
+    $attachments = array();
+    $output = $outputCaptions = '';
+extract( shortcode_atts( array(
+    'class' => 'featured', /* radius, round */
+    'slidesize' => 'medium',
+    'minwidth' => 0,
+    'minheight' => 0
+    ), $attr ) );
+    $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
+    //check if there is a post thumbnail
+    if ( has_post_thumbnail() ) {
+         $__post = get_post(get_post_thumbnail_id());
+        $imgmeta = wp_get_attachment_metadata( $__post->ID );
+        if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
+            $attachments[] = $__post;
+        }
+    } 
+    $attachments = array_merge($attachments, get_posts($args));
+    if (count($attachments)>0) {
+    //$output = '<div >';
+        $output .= '<div class="row"><div class="twelve columns"><div id="sf_gallery" class="'.$class.'">';
+        foreach ( $attachments as $attachment ) {
+            $output .= '<div data-caption="#orbit_'.$post->ID.'_'.$attachment->ID.'">';
+            //var_dump($attachment);  
+            $att_title = apply_filters( 'the_title' , $attachment->post_title );
+            $output .= wp_get_attachment_image( $attachment->ID , $slidesize);
+            $output .= '</div>';
+            $outputCaptions .= '<span class="orbit-caption" id="orbit_'.$post->ID.'_'.$attachment->ID.'">'.$attachment->post_excerpt.'</span>';
+    
+        }
+        //$output .= '</ul>';
+    $output .= '</div></div></div>';
+        
+    }
+    
+    $output .= $outputCaptions;
+    return $output;
+}
+
+
+add_shortcode('slider', 'sf_slider_shortcode');
+
+function sf_slider_shortcode($attr) {
 	global $post, $wp_locale;
     $attachments = array();
     $output = $outputCaptions = '';
@@ -27,7 +72,7 @@ extract( shortcode_atts( array(
 			$attachments[] = $__post;
     	}
 	} 
-	array_merge($attachments, get_posts($args));
+	$attachments =  array_merge($attachments, get_posts($args));
 	if (count($attachments)>0) {
 	//$output = '<div >';
 		$output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
