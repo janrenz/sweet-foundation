@@ -90,7 +90,12 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				* called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				*/
-				get_template_part( 'content', get_post_format() );
+				if (get_post_type() != 'post'){
+				    //this is a cpt
+				    get_template_part( 'content', get_post_type() );
+				}else{
+    				get_template_part( 'content', get_post_format() );
+				}
 				endwhile; ?>
 				</div>
 				<?php //sf_content_nav( 'nav-below' ); ?>
