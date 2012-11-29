@@ -17,13 +17,14 @@ extract( shortcode_atts( array(
     'class' => '', /* radius, round */
     'slidesize' => 'medium',
     'minwidth' => 0,
-    'minheight' => 0
+    'minheight' => 0,
+	'id' => $post->ID	
     ), $attr ) );
-    $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
+    $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $id ); 
     //check if there is a post thumbnail
     if ( has_post_thumbnail() ) {
          $__post = get_post(get_post_thumbnail_id());
-        $imgmeta = wp_get_attachment_metadata( $__post->ID );
+        $imgmeta = wp_get_attachment_metadata(  $id  );
         if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
             $attachments[] = $__post;
         }
