@@ -59,7 +59,7 @@ function sf_setup() {
 	/**
 	 * Add support for the Aside Post Formats
 	 */
-	add_theme_support( 'post-formats', array( 'aside', ) );
+	add_theme_support( 'post-formats', array( 'aside','link' ) );
 	
 	add_theme_support( 'custom-background' );
 	add_editor_style ( '/stylesheets/foundation.css' );
