@@ -65,13 +65,12 @@ extract( shortcode_atts( array(
     ), $attr ) );
 	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
 	//check if there is a post thumbnail
-	$foundPostId = null;
     if ( has_post_thumbnail() ) {
    		$__post = get_post(get_post_thumbnail_id());
     	$imgmeta = wp_get_attachment_metadata( $__post->ID );
     	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
 			$attachments[] = $__post;
-			$foundPostId = $__post->ID;
+			$args['exclude'] = $__post->ID;
     	}
 	} 
 	$attachments =  array_merge($attachments, get_posts($args));
@@ -79,14 +78,12 @@ extract( shortcode_atts( array(
 	//$output = '<div >';
 		$output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
 		foreach ( $attachments as $attachment ) {
-			if ($__post->ID != $foundPostId){
 				$output .= '<div data-caption="#orbit_'.$post->ID.'_'.$attachment->ID.'">';
 				//var_dump($attachment);  
 				$att_title = apply_filters( 'the_title' , $attachment->post_title );
 				$output .= wp_get_attachment_image( $attachment->ID , $slidesize);
 				$output .= '</div>';
 				$outputCaptions .= '<span class="orbit-caption" id="orbit_'.$post->ID.'_'.$attachment->ID.'">'.$attachment->post_excerpt.'</span>';
-			}
 		}
 		//$output .= '</ul>';
     $output .= '</div></div></div>';
