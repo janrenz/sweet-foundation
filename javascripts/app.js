@@ -29,7 +29,9 @@
   
     $("#featured").orbit(
      {
-    	 pauseOnHover: true
+    	 pauseOnHover: true,
+    	 animationSpeed: 1500,
+    	 startClockOnMouseOut: true
      }		
     );
 
