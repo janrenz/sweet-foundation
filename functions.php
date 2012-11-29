@@ -298,7 +298,7 @@ function foundation_page_navi($before = '', $after = '') {
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">&laquo;</a></li>';
 	}
 	echo '<li class="bpn-prev-link">';
-	previous_posts_link('<<');
+	previous_posts_link('&lt;');
 	echo '</li>';
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
@@ -308,7 +308,7 @@ function foundation_page_navi($before = '', $after = '') {
 		}
 	}
 	echo '<li class="bpn-next-link">';
-	next_posts_link('>>');
+	next_posts_link('&gt;');
 	echo '</li>';
 	if ($end_page < $max_page) {
 		$last_page_text = "Last";
