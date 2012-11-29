@@ -75,7 +75,6 @@ extract( shortcode_atts( array(
     	}
 	} 
 	$attachments =  array_merge($attachments, get_posts($args));
-	$attachments = array_unique ($attachments);
 	if (count($attachments)>0) {
 	//$output = '<div >';
 		$output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
