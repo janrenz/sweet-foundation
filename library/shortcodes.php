@@ -71,6 +71,7 @@ extract( shortcode_atts( array(
     	$imgmeta = wp_get_attachment_metadata( $__post->ID );
     	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
 			$attachments[] = $__post;
+			$foundPostId = $__post->ID;
     	}
 	} 
 	$attachments =  array_merge($attachments, get_posts($args));
