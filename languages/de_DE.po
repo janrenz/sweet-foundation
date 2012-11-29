@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sweet Foundation v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-11-29 14:44+0100\n"
+"POT-Creation-Date: 2012-11-29 14:53+0100\n"
+"PO-Revision-Date: 2012-11-29 14:53+0100\n"
 "Last-Translator: Jan Renz\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,40 +19,80 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 # @ sf
-#: 404.php:16
+#: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oh. Diese Seite konnte nicht gefunden werden."
 
 # @ sf
-#: 404.php:20
+#: 404.php:25
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr "Es sieht so aus als konnte nichts gefunden werden. Vielleicht möchten Sie es mit einem der folgenden Links oder einer Suche probieren?"
 
 # @ sf
-#: 404.php:27
+#: 404.php:40
 msgid "Most Used Categories"
 msgstr "Meistbenutzte Kategorien"
 
 # @ sf
-#. translators: %1$s: smilie
-#: 404.php:35
+#: 404.php:52
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Versuchen Sie es in den Monatsarchiven. %1$s"
 
 # @ bonestheme
-#: archive.php:102
-#: index.php:46
-#: search.php:42
+#: archive-photo.php:84
+#: archive.php:114
+#: index.php:24
 msgid "&laquo; Older Entries"
 msgstr ""
 
 # @ bonestheme
-#: archive.php:104
-#: index.php:47
-#: search.php:43
+#: archive-photo.php:86
+#: archive.php:116
+#: index.php:25
 msgid "Newer Entries &raquo;"
 msgstr ""
+
+# @ sf
+#: archive.php:35
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Kategorie Archiv: %s"
+
+# @ sf
+#: archive.php:38
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Tag Archive: %s"
+
+# @ sf
+#: archive.php:45
+#, php-format
+msgid "Author Archives: %s"
+msgstr "Autoren Archiv: %s"
+
+# @ sf
+#: archive.php:53
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Tages Archives: %s"
+
+# @ sf
+#: archive.php:56
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Montatsarchiv: %s"
+
+# @ sf
+#: archive.php:59
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Jahresarchiv: %s"
+
+# @ sf
+#: archive.php:62
+msgid "Archives"
+msgstr "Archive"
 
 # @ sf
 #: comments.php:32
@@ -87,6 +127,7 @@ msgstr "Kein Kommentieren mehr m&ouml;glich."
 
 # @ sf
 #: content-page.php:17
+#: content-photo.php:17
 #: content-single.php:19
 #: content.php:26
 #: image.php:86
@@ -95,7 +136,8 @@ msgstr "Seiten:"
 
 # @ sf
 #: content-page.php:18
-#: content-single.php:57
+#: content-photo.php:18
+#: content-single.php:59
 #: content.php:59
 #: image.php:34
 #: image.php:100
@@ -103,7 +145,6 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 # @ sf
-#. translators: used between list items, there is a space after the comma
 #: content-single.php:25
 #: content-single.php:28
 #: content.php:34
@@ -217,6 +258,39 @@ msgid "Both comments and trackbacks are currently closed."
 msgstr "Kommentare und Trackbacks sind geschlossen."
 
 # @ sf
+# @ sweet-foundation
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+# @ sf
+#: no-results.php:20
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Bereit für dein ersten Artikel? <a href=\"%1$s\">Jetzt loslegen</a>."
+
+# @ sf
+#: no-results.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Leider wurden keine Ergebnisse zu dieser Suche gefunden. Probieren Sie es bitte mit anderen Suchbegriffen noch einmal."
+
+# @ sf
+#: no-results.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Das wonach Sie Suchten konnte nicht gefunden werden. Vielleicht hilft eine Suche."
+
+# @ sweet-foundation
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+# @ sweet-foundation
+#: search.php:61
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+# @ sf
 #: inc/template-tags.php:39
 msgid "Post navigation"
 msgstr "Post Navigation"
@@ -266,7 +340,6 @@ msgid "Your comment is awaiting moderation."
 msgstr "Ihr Kommentar wartet auf seine Freischaltung."
 
 # @ sf
-#. translators: 1: date, 2: time
 #: inc/template-tags.php:99
 #, php-format
 msgid "%1$s at %2$s"
@@ -276,7 +349,7 @@ msgstr "%1$s um %2$s"
 #: inc/template-tags.php:126
 #, php-format
 msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
-msgstr "Ver&ouml;ffentlicht um <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> von <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "Ver&ouml;ffentlicht am <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> von <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
 # @ sf
 #: inc/template-tags.php:132
@@ -284,172 +357,52 @@ msgstr "Ver&ouml;ffentlicht um <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">
 msgid "View all posts by %s"
 msgstr "Zeige alle Artikel von %s"
 
-# @ bonestheme
-#: index.php:20
-#: single.php:17
-msgid "Posted"
-msgstr ""
-
-# @ bonestheme
-#: index.php:20
-#: single.php:17
-msgid "by"
-msgstr ""
-
-# @ bonestheme
-#: index.php:20
-#: single.php:17
-msgid "filed under"
-msgstr ""
-
-# @ bonestheme
-#: index.php:56
-#: single.php:41
-msgid "Oops, Post Not Found!"
-msgstr ""
-
-# @ bonestheme
-#: index.php:59
-#: single.php:44
-msgid "Uh Oh. Something is missing. Try double checking things."
-msgstr ""
-
-# @ bonestheme
-#: index.php:62
-msgid "This is the error message in the index.php template."
-msgstr ""
-
 # @ default
-#: library/theme-options.php:168
+#: library/theme-options.php:208
 msgid "Link Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:174
+#: library/theme-options.php:214
 msgid "Box Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:180
+#: library/theme-options.php:220
 msgid "Main Navigation Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:185
+#: library/theme-options.php:225
 msgid "Main Navigation Text Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:190
+#: library/theme-options.php:230
 msgid "Main Navigation Active Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:195
+#: library/theme-options.php:235
 msgid "Header Background Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:200
+#: library/theme-options.php:240
 msgid "Header Text Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:205
+#: library/theme-options.php:245
 msgid "Footer Background Color"
 msgstr ""
 
-# @ default
-#: library/theme-options.php:210
-msgid "Body Background Color"
+#: library/theme-options.php:250
+msgid "Text Color"
 msgstr ""
 
 # @ default
-#: library/theme-options.php:215
+#: library/theme-options.php:255
 msgid "Footer Text Color"
 msgstr ""
-
-# @ sf
-# @ sweet-foundation
-#: no-result.php:14
-#: no-results.php:14
-#: search.php:51
-msgid "Nothing Found"
-msgstr "Nichts gefunden"
-
-# @ sf
-#: no-result.php:20
-#: no-results.php:20
-#, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Bereit für dein ersten Artikel? <a href=\"%1$s\">Jetzt loslegen</a>."
-
-# @ sf
-#: no-result.php:24
-#: no-results.php:24
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Leider wurden keine Ergebnisse zu dieser Suche gefunden. Probieren Sie es bitte mit anderen Suchbegriffen noch einmal."
-
-# @ sf
-#: no-result.php:29
-#: no-results.php:29
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Das wonach Sie Suchten konnte nicht gefunden werden. Vielleicht hilft eine Suche."
-
-# @ sweet-foundation
-#: search.php:20
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-# @ sweet-foundation
-#: search.php:55
-msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
-msgstr ""
-
-# @ bonestheme
-#: single.php:47
-msgid "This is the error message in the single.php template."
-msgstr ""
-
-# @ sf
-#: archive.php:26
-#, php-format
-msgid "Category Archives: %s"
-msgstr "Kategorie Archiv: %s"
-
-# @ sf
-#: archive.php:29
-#, php-format
-msgid "Tag Archives: %s"
-msgstr "Tag Archive: %s"
-
-# @ sf
-#: archive.php:36
-#, php-format
-msgid "Author Archives: %s"
-msgstr "Autoren Archiv: %s"
-
-# @ sf
-#: archive.php:44
-#, php-format
-msgid "Daily Archives: %s"
-msgstr "Tages Archives: %s"
-
-# @ sf
-#: archive.php:47
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr "Montatsarchiv: %s"
-
-# @ sf
-#: archive.php:50
-#, php-format
-msgid "Yearly Archives: %s"
-msgstr "Jahresarchiv: %s"
-
-# @ sf
-#: archive.php:53
-msgid "Archives"
-msgstr "Archive"
 
