@@ -14,6 +14,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'sf' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
@@ -51,6 +52,8 @@
 				get_permalink(),
 				the_title_attribute( 'echo=0' )
 			);
+			
+			?>
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'sf' ), '<span class="edit-link">', '</span>' ); ?>
