@@ -62,16 +62,17 @@ extract( shortcode_atts( array(
     'class' => 'featured', /* radius, round */
     'slidesize' => 'sf_slider_gallery',
 	'minwidth' => 0,
-	'minheight' => 0
+	'minheight' => 0,
+	'id' => $post->ID
     ), $attr ) );
-	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
+	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $id ); 
 	//check if there is a post thumbnail
     if ( has_post_thumbnail() ) {
    		$__post = get_post(get_post_thumbnail_id());
-    	$imgmeta = wp_get_attachment_metadata( $__post->ID );
+    	$imgmeta = wp_get_attachment_metadata( $id );
     	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
 			$attachments[] = $__post;
-			$args['exclude'] = $__post->ID;
+			$args['exclude'] = $id;
     	}
 	} 
 	$attachments =  array_merge($attachments, get_posts($args));
@@ -79,12 +80,12 @@ extract( shortcode_atts( array(
 	//$output = '<div >';
 		$output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
 		foreach ( $attachments as $attachment ) {
-				$output .= '<div data-caption="#orbit_'.$post->ID.'_'.$attachment->ID.'">';
+				$output .= '<div data-caption="#orbit_'.$id.'_'.$attachment->ID.'">';
 				//var_dump($attachment);  
 				$att_title = apply_filters( 'the_title' , $attachment->post_title );
 				$output .= wp_get_attachment_image( $attachment->ID , $slidesize);
 				$output .= '</div>';
-				$outputCaptions .= '<span class="orbit-caption" id="orbit_'.$post->ID.'_'.$attachment->ID.'">'.$attachment->post_excerpt.'</span>';
+				$outputCaptions .= '<span class="orbit-caption" id="orbit_'.$id.'_'.$attachment->ID.'">'.$attachment->post_excerpt.'</span>';
 		}
 		//$output .= '</ul>';
     $output .= '</div></div></div>';
