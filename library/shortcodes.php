@@ -22,11 +22,13 @@ extract( shortcode_atts( array(
     ), $attr ) );
     $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $id ); 
     //check if there is a post thumbnail
+    $foundsome = FALSE;
     if ( has_post_thumbnail() ) {
          $__post = get_post(get_post_thumbnail_id());
         $imgmeta = wp_get_attachment_metadata(  $id  );
         if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
             $attachments[] = $__post;
+            $foundsome = TRUE;
         }
     } 
     $attachments = array_merge($attachments, get_posts($args));
@@ -34,19 +36,25 @@ extract( shortcode_atts( array(
     //$output = '<div >';
         $output .= '<div class="row"><div class="twelve columns"><div id="sf_gallery" class="sf_gallery '.$class.'"><ul class="sf_gallery_container" data-clearing>';
         foreach ( $attachments as $attachment ) {
-            $output .= '<li>';
-            //var_dump($attachment);  
-            $att_title = apply_filters( 'the_title' , $attachment->post_title );
-            $img =  wp_get_attachment_image_src( $attachment->ID , $slidesize);
-            $fullImg = wp_get_attachment_image_src( $attachment->ID , "full");
-            $output .=  '<a href="'.$fullImg[0].'"><img class="sf_gallery_single_image" data-caption="'.$attachment->post_excerpt.'" data-width="'.$img[1].'" data-height="'.$img[2].'" src="'.$img[0].'"></img>';
-            $output .= '</a></li>';
-          
+        	$imgmeta = wp_get_attachment_metadata(  $$attachment->ID  );
+        	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
+        		$foundsome = TRUE;
+	            $output .= '<li>';
+	            //var_dump($attachment);  
+	            $att_title = apply_filters( 'the_title' , $attachment->post_title );
+	            $img =  wp_get_attachment_image_src( $attachment->ID , $slidesize);
+	            $fullImg = wp_get_attachment_image_src( $attachment->ID , "full");
+	            $output .=  '<a href="'.$fullImg[0].'"><img class="sf_gallery_single_image" data-caption="'.$attachment->post_excerpt.'" data-width="'.$img[1].'" data-height="'.$img[2].'" src="'.$img[0].'"></img>';
+	            $output .= '</a></li>';
+        	}
     
         }
         $output .= '</ul>';
        $output .= '</div><div class="clear"></div></div></div>';
         
+    }
+    if ( $foundsome == FALSE) {
+	    return '';
     }
     return $output;
 }
@@ -56,6 +64,7 @@ add_shortcode('slider', 'sf_slider_shortcode');
 
 function sf_slider_shortcode($attr) {
 	global $post, $wp_locale;
+	$foundsome = FALSE;
     $attachments = array();
     $output = $outputCaptions = '';
 extract( shortcode_atts( array(
@@ -73,6 +82,7 @@ extract( shortcode_atts( array(
     	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
 			$attachments[] = $__post;
 			$args['exclude'] = $id;
+			$foundsome = TRUE;
     	}
 	} 
 	$attachments =  array_merge($attachments, get_posts($args));
@@ -82,6 +92,7 @@ extract( shortcode_atts( array(
 		foreach ( $attachments as $attachment ) {
 			$imgmeta = wp_get_attachment_metadata( $attachment->ID );
 			if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
+				$foundsome = TRUE;
 				$output .= '<div data-caption="#orbit_'.$id.'_'.$attachment->ID.'">';
 				//var_dump($attachment);  
 				$att_title = apply_filters( 'the_title' , $attachment->post_title );
@@ -97,6 +108,9 @@ extract( shortcode_atts( array(
 	}
     
     $output .= $outputCaptions;
+    if ( $foundsome == FALSE) {
+    	return '';
+    }
 	return $output;
 }
 
