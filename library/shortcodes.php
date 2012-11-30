@@ -80,12 +80,16 @@ extract( shortcode_atts( array(
 	//$output = '<div >';
 		$output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
 		foreach ( $attachments as $attachment ) {
+			$imgmeta = wp_get_attachment_metadata( $attachment->ID );
+			if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
 				$output .= '<div data-caption="#orbit_'.$id.'_'.$attachment->ID.'">';
 				//var_dump($attachment);  
 				$att_title = apply_filters( 'the_title' , $attachment->post_title );
 				$output .= wp_get_attachment_image( $attachment->ID , $slidesize);
 				$output .= '</div>';
 				$outputCaptions .= '<span class="orbit-caption" id="orbit_'.$id.'_'.$attachment->ID.'">'.$attachment->post_excerpt.'</span>';
+		
+			}
 		}
 		//$output .= '</ul>';
     $output .= '</div></div></div>';
