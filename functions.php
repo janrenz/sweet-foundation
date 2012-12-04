@@ -308,11 +308,11 @@ function foundation_page_navi($before = '', $after = '') {
 		}
 	}
 	echo '<li class="bpn-next-link">';
-	next_posts_link('&gt;|');
+	next_posts_link('&gt;');
 	echo '</li>';
 	if ($end_page < $max_page) {
 		$last_page_text = "Last";
-		echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">&raquo;</a></li>';
+		echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">&gt;|</a></li>';
 	}
 	echo '</ul></nav>'.$after."";
 } /* end page navi */
