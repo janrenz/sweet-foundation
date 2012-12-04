@@ -225,7 +225,7 @@ function sf_rows( $atts, $content = null ) {
     ), $atts ) );
     $cssclasses = array ( 'row' );
     
-    if ($classes) $cssclasses = array_merge($cssclasses, $classes);
+    if ($classes) $cssclasses = array_merge($cssclasses, (array)$classes);
     
     $output = '<div class="'.implode (' ', $cssclasses).'">';
     $output .= do_shortcode($content);
@@ -284,7 +284,7 @@ function sf_cols ( $atts, $content = null ) {
         default:
             break;
     }
-    if ($classes) $cssclasses = array_merge($cssclasses, $classes);
+    if ($classes) $cssclasses = array_merge($cssclasses, (array)$classes);
     
     $output = '<div class="'.implode (' ', $cssclasses).'">';
     $output .= do_shortcode($content);
