@@ -21,7 +21,7 @@ extract( shortcode_atts( array(
     'minheight' => 0,
 	'id' => $post->ID	
     ), $attr ) );
-    $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $id ); 
+    $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $id, 'orderby'=>'menu_order','order'=>'ASC' ); 
     //check if there is a post thumbnail
     $foundsome = FALSE;
     if ( has_post_thumbnail() ) {
