@@ -37,7 +37,7 @@ extract( shortcode_atts( array(
     //$output = '<div >';
         $output .= '<div class="row"><div class="twelve columns">'.$headline.'<div id="sf_gallery" class="sf_gallery '.$class.'"><ul class="sf_gallery_container" data-clearing>';
         foreach ( $attachments as $attachment ) {
-        	$imgmeta = wp_get_attachment_metadata(  $$attachment->ID  );
+        	$imgmeta = wp_get_attachment_metadata(  $attachment->ID  );
         	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
         		$foundsome = TRUE;
 	            $output .= '<li>';
