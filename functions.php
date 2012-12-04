@@ -294,7 +294,7 @@ function foundation_page_navi($before = '', $after = '') {
 	}
 	echo $before.'<nav class="page-navigation"><ul class="pagination">'."";
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
-		$first_page_text = "First";
+		$first_page_text = __("First");
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">|&lt;</a></li>';
 	}
 	echo '<li class="bpn-prev-link">';
@@ -311,7 +311,7 @@ function foundation_page_navi($before = '', $after = '') {
 	next_posts_link('&gt;');
 	echo '</li>';
 	if ($end_page < $max_page) {
-		$last_page_text = "Last";
+		$last_page_text = __("Last");
 		echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">&gt;|</a></li>';
 	}
 	echo '</ul></nav>'.$after."";
