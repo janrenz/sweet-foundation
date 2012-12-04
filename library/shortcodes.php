@@ -16,6 +16,7 @@ function sf_gallery_shortcode($attr) {
 extract( shortcode_atts( array(
     'class' => '', /* radius, round */
     'slidesize' => 'medium',
+	'headline' => '',
     'minwidth' => 0,
     'minheight' => 0,
 	'id' => $post->ID	
@@ -34,7 +35,7 @@ extract( shortcode_atts( array(
     $attachments = array_merge($attachments, get_posts($args));
     if (count($attachments)>0) {
     //$output = '<div >';
-        $output .= '<div class="row"><div class="twelve columns"><div id="sf_gallery" class="sf_gallery '.$class.'"><ul class="sf_gallery_container" data-clearing>';
+        $output .= '<div class="row"><div class="twelve columns">'.$headline.'<div id="sf_gallery" class="sf_gallery '.$class.'"><ul class="sf_gallery_container" data-clearing>';
         foreach ( $attachments as $attachment ) {
         	$imgmeta = wp_get_attachment_metadata(  $$attachment->ID  );
         	if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
