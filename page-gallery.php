@@ -48,7 +48,6 @@
                     jQuery('<img/>').load(function() {++cnt;
                         if (cnt === totalImgs) {
                             $imgs.show();
-
                             $container.montage({
                                 maxh : 320,
                                 margin : 0
