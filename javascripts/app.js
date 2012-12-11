@@ -23,17 +23,11 @@
   $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
   
     
-    $.fn.foundationTabs           ? $doc.foundationTabs() : null;
-    $.fn.foundationClearing       ? $doc.foundationClearing() : null;
+    $.fn.foundationTabs             ? $doc.foundationTabs() : null;
+    
   
   
-    $("#featured").orbit(
-     {
-    	 pauseOnHover: true,
-    	 animationSpeed: 1500,
-    	 startClockOnMouseOut: true
-     }		
-    );
+    $("#featured").orbit();
 
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
   // $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'both'});
@@ -51,9 +45,6 @@
   }
   });
   jQuery(document).ready(function(){
-	  
-	 
-	  
           //banner size fix
           /**
            * Give all objects and embed taht should remin ther html size  a surrounding div with the banner class

@@ -23,16 +23,16 @@
 <!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
 
   <!-- For third-generation iPad with high-resolution Retina display: -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicons/apple-touch-icon-144x144-precomposed.png">
   <!-- For iPhone with high-resolution Retina display: -->
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicons/apple-touch-icon-114x114-precomposed.png">
   <!-- For first- and second-generation iPad: -->
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicons/apple-touch-icon-72x72-precomposed.png">
   <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicons/apple-touch-icon-precomposed.png">
   <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
 
-  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicons/favicon.ico" type="image/x-icon" />
   
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>-->

@@ -101,7 +101,6 @@
 	      var instance        = this;
 	      var images          = instance.$imgs;
           el_w                = this.cache.container_ = instance.element.width();
-         
           w: while (images.length > 0) {
             for (var i = 1; i < images.length + 1; ++i) {
               var slice = images.slice(0, i);
@@ -130,9 +129,6 @@
 			$(window).bind('smartresize.montage', function() { 
 				instance._reload();
 			});
-			 $(document).on('click.fndtn.clearing', 'a.clearing-close, div.clearing-blackout', function (e, current, target) {
-				 instance._reload();
-	    	  });
 		}
 		
 	
