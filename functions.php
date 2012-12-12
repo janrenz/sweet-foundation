@@ -232,7 +232,7 @@ add_action( 'widgets_init', 'sf_widgets_init' );
  *
  */
 add_filter('wp_nav_menu_objects', function ($items) {
-	$hasSub = function ($menu_item_id, &$items) {
+	$hasSub = function ($menu_item_id, $items) {
 		foreach ($items as $item) {
 			if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) {
 				return true;
@@ -243,7 +243,7 @@ add_filter('wp_nav_menu_objects', function ($items) {
 	$allParents = array();
 
 	foreach ($items as &$item) {
-		if ($hasSub($item->ID, &$items)) {
+		if ($hasSub($item->ID, $items)) {
 			$allParents[] = $item->ID;
 			$item->classes[] = 'has-flyout';
 			$item->classes[] = 'has-dropdown'; // all elements of field "classes" of a menu item get join together and render to class attribute of <li> element in HTML
