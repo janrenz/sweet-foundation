@@ -7,7 +7,7 @@
     <!-- Main Blog Content -->
     <div class="<?php echo ($sf_big_col);?> columns" role="content">
 
-				    <div id="main" class="eightcol first clearfix" role="main">
+				    <div id="main" role="main">
 						<div id="posts_wrapper">
 					    <?php if (have_posts()) : while (have_posts()) : the_post();
 					
