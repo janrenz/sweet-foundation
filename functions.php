@@ -94,13 +94,13 @@ function theme_styles()
 	wp_register_style( 'foundation-app', get_template_directory_uri() . '/stylesheets/app.css', array(), '3.0', 'all' );
     // Load this from child theme if a child theme is used
     wp_register_style( 'foundation-style', get_stylesheet_directory_uri() . '/style.css', array(), '3.0', 'all' );
-    wp_register_style( 'foundation-icons', get_stylesheet_directory_uri() . '/stylesheets/general_foundicons.css', array(), '3.0', 'all' );
+    wp_register_style( 'icons', get_stylesheet_directory_uri() . '/stylesheets/font-awesome.min.css', array(), '3.0', 'all' );
 	
 	wp_enqueue_style( 'custom-font' );
 	wp_enqueue_style( 'foundation-core' );
 	wp_enqueue_style( 'foundation-app' );
     wp_enqueue_style( 'foundation-style' );
-    wp_enqueue_style( 'foundation-icons' );
+    wp_enqueue_style( 'icons' );
 }
 
 function foundation_js(){

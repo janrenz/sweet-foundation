@@ -34,8 +34,8 @@
 				$categories_list = get_the_category_list( __( ', ', 'sf' ) );
 				if ( $categories_list && sf_categorized_blog() ) :
 			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'sf' ), $categories_list ); ?>
+			<span class="cat-links"><i class="icon-folder-close-alt"></i>&nbsp;
+				<?php printf( __( '%1$s', 'sf' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
