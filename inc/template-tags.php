@@ -123,7 +123,7 @@ if ( ! function_exists( 'sf_posted_on' ) ) :
  * @since sf 1.0
  */
 function sf_posted_on() {
-	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><i class="icon-time"></i>&nbsp;<time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline">&nbsp;<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author"><i class="icon-user"></i>&nbsp;%7$s</a></span></span>', 'sf' ),
+	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><i class="icon-time"></i>&nbsp;<time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a> <span class="byline">&nbsp;<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author"><i class="icon-user"></i>&nbsp;%7$s</a></span></span>', 'sf' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -131,6 +131,7 @@ function sf_posted_on() {
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'sf' ), get_the_author() ) ),
 		esc_html( get_the_author() )
+        
 	);
 }
 endif;

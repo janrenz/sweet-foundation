@@ -266,3 +266,7 @@ font-size: 150%;
 article #ppc-box ul > li{
 	margin-left: 0px;
 }
+
+.entry-meta {
+	margin-bottom: 10px;
+}
