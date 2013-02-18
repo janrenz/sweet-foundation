@@ -13,7 +13,7 @@
 		<div class="entry-meta">
 	    <?php sf_posted_on(); ?>
 	    <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-            <?php if (get_comments_number()>0) { ?><a href="<?php the_permalink(); ?>"<i class="icon-user"></i></a><?php } ?>&nbsp;<span class="comments-link"><?php comments_popup_link( __( '', 'sf' ), __( '1 Comment', 'sf' ), __( '% Comments', 'sf' ) ); ?></span>
+            <?php if (get_comments_number()>0) { ?><a href="<?php the_permalink(); ?>"<i class="icon-comment"></i></a><?php } ?>&nbsp;<span class="comments-link"><?php comments_popup_link( __( '', 'sf' ), __( '1 Comment', 'sf' ), __( '% Comments', 'sf' ) ); ?></span>
             <?php endif; ?>
 		<?php endif; ?>
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
@@ -22,8 +22,8 @@
                 $categories_list = get_the_category_list( __( ', ', 'sf' ) );
                 if ( $categories_list && sf_categorized_blog() ) :
             ?>
-            <span class="cat-links"><a href="#"><i class="icon-folder-close"></i></a>&nbsp;
-                <?php printf( __( '%1$s', 'sf' ), $categories_list ); ?>
+            <span class="cat-links">
+                <a href="#"><i class="icon-folder-close"></i></a>&nbsp;<?php printf( __( '%1$s', 'sf' ), $categories_list ); ?>
             </span>
             <?php endif; // End if categories ?>
 
@@ -32,9 +32,8 @@
             $tags_list = get_the_tag_list( '', __( ', ', 'sf' ) );
             if ( $tags_list ) :
             ?>
-            <span class="sep"> | </span>
             <span class="tags-links">
-                <?php printf( __( 'Tagged %1$s', 'sf' ), $tags_list ); ?>
+                <a href="#"><i class="icon-tags"></i></a>&nbsp;<?php printf( '%1$s ', $tags_list ); ?>
             </span>
             <?php endif; // End if $tags_list ?>
         <?php endif; // End if 'post' == get_post_type() ?>

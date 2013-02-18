@@ -75,6 +75,13 @@ class SFThemeOptions
 				'type'      => 'option'
 				//'transport' => 'postMessage',
 		) );#
+		#hide_cat_in_post_list_header
+		  $wp_customize->add_setting('hide_cat_in_post_list_header', array(
+                'default'   => false,
+                'type'      => 'option'
+                //'transport' => 'postMessage',
+        ) );#
+		
 		//hide_topbar_search
 		$wp_customize->add_setting('hide_topbar_search', array(
 				'default'   => false,
@@ -148,6 +155,11 @@ class SFThemeOptions
 				'section' => 'theme_element_settings',
 				'type'    => 'checkbox',
 		) );
+            $wp_customize->add_control( 'hide_cat_in_post_list_header', array(
+                'label'   => 'Hide Categories in Post List Meta',
+                'section' => 'theme_element_settings',
+                'type'    => 'checkbox',
+        ) );
 		$wp_customize->add_control( 'display_header_area_on_frontpage', array(
 				'label'   => 'Show Header on Home Page',
 				'section' => 'theme_header_settings',
@@ -307,6 +319,12 @@ class SFThemeOptions
 		}
 	 	<?php 
 		}
+        if  (get_option (  'hide_cat_in_post_list_header')  == 1){ ?> 
+        .cat-links {
+            display: none;
+        }
+        <?php 
+        }
 	 	//hide title in topbar
 		if  (get_option (  'hide_title_top_bar' )  == 1){ ?> .top-bar #logo
 		{
