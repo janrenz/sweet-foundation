@@ -22,7 +22,7 @@
                 $categories_list = get_the_category_list( __( ', ', 'sf' ) );
                 if ( $categories_list && sf_categorized_blog() ) :
             ?>
-            <span class="cat-links"><a href="#"></a><i class="icon-folder-close"></i></a>&nbsp;
+            <span class="cat-links"><a href="#"><i class="icon-folder-close"></i></a>&nbsp;
                 <?php printf( __( '%1$s', 'sf' ), $categories_list ); ?>
             </span>
             <?php endif; // End if categories ?>
