@@ -123,7 +123,7 @@ if ( ! function_exists( 'sf_posted_on' ) ) :
  * @since sf 1.0
  */
 function sf_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'sf' ),
+	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><i class="general foundicon-calendar"></i><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline">&nbsp;<i class="social foundicon-torso"></i><span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'sf' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
