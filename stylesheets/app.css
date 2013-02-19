@@ -270,3 +270,12 @@ article #ppc-box ul > li{
 .entry-meta {
 	margin-bottom: 10px;
 }
+/* sidebar styling */
+.sidebar ul {
+	list-style-type: none;
+	margin-left: 0px;
+}
+.sidebar ul li {
+	padding-bottom:10px;
+}
+
