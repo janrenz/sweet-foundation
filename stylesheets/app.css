@@ -106,12 +106,7 @@ html[xmlns] .clearfix {
 .banner img{
 	width:auto;
 }
-/** Hide WP Tracking Smiley */
-img#wpstats{
-  position:absolute;
-  height:0;
-  width:0;
-}
+
 /** Admin Bar **/
 body.admin-bar .top-bar-wrapper div.fixed{
 	margin-top: 28px !important;
