@@ -29,17 +29,17 @@
 			if ( ! sf_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sf' );
+					$meta_text = '<a href="#"><i class="icon-tags"></i></a>&nbsp; %2$s. <a href="%3$s"><i class="icon-link"></i></a>&nbsp;<a href="%3$s" title="'.__("Permalink to", "sf"). ' %4$s" rel="bookmark">'.__("permalink", "sf").'</a>' ;
 				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sf' );
+					$meta_text = '<a href="%3$s"><i class="icon-link"></i></a>&nbsp;<a href="%3$s" title="'.__("Permalink to", "sf"). ' %4$s" rel="bookmark">'.__("permalink", "sf").'</a>';
 				}
 
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sf' );
+					$meta_text = '<a href="#"><i class="icon-folder-close"></i></a>&nbsp;%1$s <a href="#"><i class="icon-tags"></i></a>&nbsp; %2$s. <a href="%3$s"><i class="icon-link"></i></a>&nbsp;<a href="%3$s" title="'.__("Permalink to", "sf"). ' %4$s" rel="bookmark">'.__("permalink", "sf").'</a>';
 				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sf' );
+					$meta_text = '<a href="#"><i class="icon-folder-close"></i></a>&nbsp;%1$s. <a href="%3$s"><i class="icon-link"></i></a>&nbsp;<a href="%3$s" title="'.__("Permalink to", "sf"). ' %4$s" rel="bookmark">'.__("permalink", "sf").'</a>';
 				}
 
 			} // end check for categories on this blog
@@ -53,6 +53,6 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'sf' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'sf' ), '<span class="edit-link"><a href="'.get_edit_post_link().'"><i class="icon-edit"></i></a>&nbsp;', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

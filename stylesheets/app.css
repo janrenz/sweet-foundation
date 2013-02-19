@@ -278,4 +278,6 @@ article #ppc-box ul > li{
 .sidebar ul li {
 	padding-bottom:10px;
 }
-
+.sidebar li, .sidebar p {
+	font-size: 13px;
+}
