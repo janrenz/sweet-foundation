@@ -19,7 +19,7 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
             <?php
                 /* translators: used between list items, there is a space after the comma */
-                $categories_list = get_the_category_list( __( ', ', 'sf' ), '' );
+                $categories_list = get_the_category_list( ', ', '' );
                 if ( $categories_list && sf_categorized_blog() ) :
             ?>
             <span class="cat-links">
