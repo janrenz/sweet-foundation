@@ -276,3 +276,7 @@ article #ppc-box ul > li{
 .sidebar li, .sidebar p {
 	font-size: 13px;
 }
+/* comment button */
+a#leave_a_comment {
+	margin-bottom:10px;
+}
