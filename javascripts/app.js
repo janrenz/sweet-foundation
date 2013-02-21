@@ -26,7 +26,7 @@
     $.fn.foundationTabs             ? $doc.foundationTabs() : null;
     
   
-  
+   //do not use orbit slider on custom gallery page
     $("#featured").orbit();
 
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
@@ -72,7 +72,13 @@
             jQuery(this).css('max-width', jQuery(this).attr('width')+'px');
         }
       );
-
+        jQuery(document).ready(function() {
+	        $('#leave_a_comment').click(function() {
+	            $('#comment_form_wrapper').show();
+	            $('#leave_a_comment').hide();
+	            return false();
+	        });
+	    });
   });
 
 })(jQuery, this);

@@ -71,6 +71,9 @@
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'sf' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
-
+	<a href="#" class="button radius secondary small" id="leave_a_comment"><?php echo __('Leave a comment', 'sf'); ?></a>
+		<div id="comment_form_wrapper" style="display: none;">
+		    <?php comment_form( ); ?>
+		</div>
+	
 </div><!-- #comments .comments-area -->
