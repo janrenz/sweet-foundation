@@ -76,7 +76,7 @@
 	        $('#leave_a_comment').click(function() {
 	            $('#comment_form_wrapper').show();
 	            $('#leave_a_comment').hide();
-	            return false();
+	            return false;
 	        });
 	    });
   });
