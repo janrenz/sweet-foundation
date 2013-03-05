@@ -357,8 +357,8 @@ class SFThemeOptions
 		if (get_option ( 'footer_is_fixed' ) == 1){
 		?>
 				<script type="text/javascript">
-			                jQuery('document').ready(function(){
-			                    jQuery('body').css('margin-bottom', (jQuery('#footer').height()+10)+'px');
+			                $('document').ready(function(){
+			                    $('body').css('margin-bottom', ($('#footer').height()+10)+'px');
 			                });
 			    </script>
 			<?php 
@@ -367,9 +367,9 @@ class SFThemeOptions
 		if (get_option ('topbar_is_fixed') == 1){
 			?>
 						<script type="text/javascript">
-					                jQuery('document').ready(function(){
-						                var tb_height =jQuery('.header .top-bar').height();
-					                    jQuery('body').css('margin-top', jQuery('body').css('margin-top')+tb_height);
+					                $('document').ready(function(){
+						                var tb_height =$('.header .top-bar').height();
+					                    $('body').css('margin-top', $('body').css('margin-top')+tb_height);
 					                });
 					    </script>
 					<?php 

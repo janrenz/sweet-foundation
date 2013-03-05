@@ -5,8 +5,8 @@
 // Gallery shortcode
 // !TODO, rewrite and test this
 // remove the standard shortcode
-remove_shortcode('gallery', 'gallery_shortcode');
-add_shortcode('gallery', 'sf_gallery_shortcode');
+//remove_shortcode('gallery', 'gallery_shortcode');
+//add_shortcode('gallery', 'sf_gallery_shortcode');
 
 
 function sf_gallery_shortcode($attr) {
@@ -49,22 +49,22 @@ extract( shortcode_atts( array(
 	}
     if (count($attachments)>0) {
     //$output = '<div >';
-        $output .= '<div class="row"><div class="large-12 columns">'.$headline.'<div id="featured" class="sf_gallery'.$class.'">';
+        $output .= '<div class="row"><div class="large-12 columns">'.$headline.'<ul data-orbit class="'.$class.'">';
         foreach ( $attachments as $attachment ) {
             $imgmeta = wp_get_attachment_metadata(  $attachment->ID  );
             if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
                 $foundsome = TRUE;
-                $output .= '';
+                $output .= '<li>';
                 //var_dump($attachment);  
                 $att_title = apply_filters( 'the_title' , $attachment->post_title );
                 $img =  wp_get_attachment_image_src( $attachment->ID , $slidesize);
                 $fullImg = wp_get_attachment_image_src( $attachment->ID , "full");
-                $output .=  '<a href="'.$fullImg[0].'"><img class="sf_gallery_single_image" data-caption="'.$attachment->post_excerpt.'" data-width="'.$img[1].'" data-height="'.$img[2].'" src="'.$img[0].'"></img>';
-                $output .= '</a>';
+                $output .=  '<img class="sf_gallery_single_image" data-caption="'.$attachment->post_excerpt.'" data-width="'.$img[1].'" data-height="'.$img[2].'" src="'.$img[0].'"></img>';
+                $output .= '</li>';
             }
         }
         $output .= '</ul>';
-       $output .= '</div><div class="clear"></div></div></div>';
+       $output .= '<div class="clear"></div></div></div>';
         
     }
     if ( $foundsome == FALSE) {
