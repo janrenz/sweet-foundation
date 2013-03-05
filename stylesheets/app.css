@@ -3692,9 +3692,6 @@ html[xmlns] .clearfix {
   width: auto; }
 
 /** Admin Bar **/
-body.admin-bar {
-  margin-top: 28px !important; }
-
 #container {
   overflow: hidden; }
 
