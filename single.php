@@ -5,7 +5,7 @@
 	<div class="row">
 
 		<div id="main"
-			class="<?php echo ($sf_big_col);?> columns postswrapper" role="main">
+			class="large-<?php echo ($sf_big_col);?> columns postswrapper" role="main">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php get_template_part( 'content', 'single' ); ?>

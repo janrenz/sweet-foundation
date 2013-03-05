@@ -8,18 +8,18 @@
  * @since sf 1.0
  */
 
-get_header(); ?>
+get_header();?>
 
 <section id="primary"
 	class="content-area">
 	<div id="content" class="site-content" role="main">
 		<div class="row">
 
-			<div id="main" class="<?php echo ($sf_big_col);?> columns" role="main">
+			<div id="main" class="large-<?php echo ($sf_big_col);?> columns" role="main">
                 <?php
                 if ( is_active_sidebar('top') ) {
                     // Display some text
-                    echo('<div class="row"><div class="twelve columns">');
+                    echo('<div class="row"><div class="large-12 columns">');
                     get_sidebar();
                     echo('</div></div>');
                 } else {

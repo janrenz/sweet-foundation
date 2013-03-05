@@ -11,13 +11,13 @@
 <footer class="footer" role="contentinfo">
 	<div id="footer" class="full-width">
 		<div class="row">
-			<div class="four columns">
+			<div class="large-4 columns">
 				<p class="source-org copyright">
 					&copy; <?php echo date('Y'); ?>
 					<?php bloginfo('name'); ?>.
 				</p>
 			</div>
-			<div class="eight columns">
+			<div class="large-8 columns">
 				<ul class="link-list right">
 	<?php if ( is_active_sidebar( 'footer1' ) ) :?>
 

@@ -20,7 +20,7 @@ get_header(); ?>
 		<?php if ($sf_showSliderPos == 'top') echo do_shortcode('[gallery]');?>
 		<div class="row">
 			<!-- Main Blog Content -->
-			<div class="<?php echo ($sf_big_col);?> columns postswrapper"
+			<div class="large-<?php echo ($sf_big_col);?> columns postswrapper"
 				role="content">
 				<?php while ( have_posts() ) : the_post(); ?>
 

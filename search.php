@@ -10,7 +10,7 @@ get_header(); ?>
 <div id="content">
 	<div class="row">
 		<!-- Main Blog Content -->
-		<div class="<?php echo ($sf_big_col);?> columns" role="content">
+		<div class="large-<?php echo ($sf_big_col);?> columns" role="content">
 
 				<?php if ( have_posts() ) : ?>
 

@@ -15,11 +15,11 @@ get_header(); ?>
     <div  class="site-content" role="main">
         <div class="row">
 
-            <div id="main" class="twelve columns" role="main">
+            <div id="main" class="large-12 columns" role="main">
                 <?php
                 if ( is_active_sidebar('top') ) {
                     // Display some text
-                    echo('<div class="row"><div class="twelve columns">');
+                    echo('<div class="row"><div class="large-12 columns">');
                     get_sidebar('top');
                     echo('</div></div>');
                 } else {

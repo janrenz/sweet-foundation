@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
 		<div class="row">
-			<div class="<?php echo ($sf_big_col);?> columns" role="content">
+			<div class="large-<?php echo ($sf_big_col);?> columns" role="content">
 				<article id="post-0" class="post error404 not-found">
 					<header class="entry-header">
 						<h1 class="entry-title">

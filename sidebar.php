@@ -2,7 +2,7 @@
 GLOBAL $sf_small_col;
 ?>
 <div
-	class="<?php echo ($sf_small_col);?> columns sidebar"
+	class="large-<?php echo ($sf_small_col);?> columns sidebar"
 	role="content">
 
 	<?php if ( is_active_sidebar( 'sidebar1' ) ) :

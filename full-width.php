@@ -3,14 +3,14 @@
  Template Name: Full Width
  */
 ?>
-<?php get_header(); ?>
+<?php get_header();die(); ?>
             
             <div id="content">
             
             <div class="row">
    <?php //get_sidebar(); ?>
     <!-- Main Blog Content -->
-    <div class="twelve columns" role="content">
+    <div class="large-12 columns" role="content">
 
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     

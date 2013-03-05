@@ -1,0 +1,330 @@
+/** lets get startet importing normalize and foundation **/
+
+@import "normalize.scss";
+@import "font-awesome.min.css";
+@import "foundation.scss";
+
+
+/**
+ *   
+ */
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter, div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+.alignright {
+  float: right !important;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+a img {
+  &.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+  }
+  &.alignnone {
+    margin: 5px 20px 20px 0;
+  }
+  &.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+  }
+  &.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+  &.alignnone, &.alignleft {
+    margin: 5px 20px 20px 0;
+  }
+  &.alignright {
+    margin: 5px 0 20px 20px;
+  }
+  img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+  }
+  p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+  }
+}
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clear {
+  clear: both;
+}
+
+.banner img {
+  width: auto;
+}
+
+/** Admin Bar **/
+
+body.admin-bar {
+  margin-top: 28px !important;
+}
+
+#container {
+  overflow: hidden;
+}
+
+.padding-top-ten {
+  padding-top: 10px;
+}
+
+article ul, .sidebar ul {
+  margin-left: 18px;
+}
+
+#tinymce {
+  ul {
+    margin-left: 18px;
+  }
+  padding: 10px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol {
+  font-family: 'Open Sans', "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2.3em;
+}
+h2 {
+  font-size:2em;
+}
+h3 {
+  font-size:1.8em;
+}
+p a {
+  font-weight: 400;
+}
+
+.top-bar ul {
+/*  position: relative; */
+}
+
+.header-wrapper {
+  h1, h2, h3, h4 {
+    font-weight: 400;
+  }
+}
+
+.nav-bar {
+  font-weight: 600;
+}
+
+p#logo {
+  margin-bottom: 0px;
+}
+
+
+
+.h2 {
+  font-size: 150%;
+}
+.row {
+  max-width: 1200px; 
+}
+.header-wrapper {
+  .header-name a, .header-description {
+    color: #ffffff;
+  }
+}
+
+#footer {
+  .row {
+    padding-top: 7px;
+  }
+  p {
+    margin-bottom: 7px;
+  }
+  ul.menu li {
+    list-style: none;
+    float: left;
+    margin-left: 22px;
+    display: block;
+  }
+}
+
+.featured {
+  background: url(spinner.gif) center center #f4f4f4;
+  height: 300px;
+  img {
+    display: none;
+  }
+  &.orbit {
+    background: none;
+    img {
+      display: block;
+    }
+  }
+}
+
+.sf_gallery div, #sf_gallery div {
+  float: left;
+  margin-bottom: 4px;
+  outline: none;
+}
+
+.sf-gallery {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  div img {
+    outline: none;
+  }
+}
+
+.divide-space {
+  margin-top: 45px;
+  border-top: 1px solid #CCC;
+  padding-top: 23px;
+}
+
+.alert-box {
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+  p:last {
+    margin-bottom: 5px;
+  }
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+    &:hover, &:active, &:visited {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+}
+
+.comment-subscription-form label {
+  display: inline;
+  /* overwrite block settng from foundation */
+}
+
+/* Hides navigation links when infinite scroll is active */
+
+.infinite-scroll #pagenavigation_wrapper {
+  display: none;
+}
+
+/* Shows the footer again in case all posts have been loaded */
+
+.infinity-end.neverending #footer {
+  /* display: block; */
+}
+
+/* fix for br ins shortcodes */
+
+.row {
+  br {
+    display: none;
+  }
+  div br {
+    display: inline;
+  }
+}
+
+/**  SPECISAL additions */
+@media only screen and (max-width: 767px) {
+  .mobile-no-padding-lr {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/** Fix for li in boxes */
+
+article #ppc-box ul > li {
+  margin-left: 0px;
+}
+
+.entry-meta {
+  margin-bottom: 10px;
+}
+
+/* sidebar styling */
+
+.sidebar {
+  ul {
+    list-style-type: none;
+    margin-left: 0px;
+    li {
+      padding-bottom: 10px;
+    }
+  }
+  li, p {
+    font-size: 13px;
+  }
+}
+
+/* comment button */
+
+a#leave_a_comment {
+  margin-bottom: 10px;
+}

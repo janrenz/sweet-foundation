@@ -4,12 +4,12 @@ Template Name: Gallery
 */
  get_header(); ?>
             
-            <div id="content">
+            <div class="sf_gallery" id="content">
             
             <div class="row">
    <?php //get_sidebar(); ?>
     <!-- Main Blog Content -->
-    <div class="twelve columns" role="content">
+    <div class="large-12 columns" role="content">
 
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     
@@ -42,7 +42,7 @@ Template Name: Gallery
        <script type="text/javascript">
             jQuery(document).ready(function($) {
                 
-                var $container = $('#sf_gallery'), $imgs = $container.find('img').show(), totalImgs = $imgs.length, cnt = 0;
+                var $container = $('#featured'), $imgs = $container.find('img').show(), totalImgs = $imgs.length, cnt = 0;
 
                 $imgs.each(function(i) {
                     var $img = $(this);

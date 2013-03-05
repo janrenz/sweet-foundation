@@ -129,6 +129,16 @@ class SFThemeOptions
 				'type'      => 'option'
 				//'transport' => 'postMessage',
 		) );
+		$wp_customize->add_setting('topbar_is_sticky', array(
+				'default'   => true,
+				'type'      => 'option'
+				//'transport' => 'postMessage',
+		) );
+		$wp_customize->add_setting('topbar_is_on_top', array(
+				'default'   => true,
+				'type'      => 'option'
+				//'transport' => 'postMessage',
+		) );
 		$wp_customize->add_setting('footer_is_fixed', array(
 				'default'   => true,
 				'type'      => 'option'
@@ -208,6 +218,16 @@ class SFThemeOptions
 		) );
 		$wp_customize->add_control( 'topbar_is_fixed', array(
 				'label'   => 'Fixed Top bar',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'topbar_is_sticky', array(
+				'label'   => 'Sticky Top Bar (only if topbar is in content)',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'topbar_is_on_top', array(
+				'label'   => 'Top Bar is on Top',
 				'section' => 'theme_header_settings',
 				'type'    => 'checkbox',
 		) );

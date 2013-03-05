@@ -5,7 +5,7 @@
 			         <div class="row">
 
     <!-- Main Blog Content -->
-    <div class="<?php echo ($sf_big_col);?> columns" role="content">
+    <div class="large-<?php echo ($sf_big_col);?> columns" role="content">
 
 				    <div id="main" role="main">
 						<div id="posts_wrapper">
