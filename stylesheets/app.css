@@ -3843,3 +3843,14 @@ article #ppc-box ul > li {
 /* comment button */
 a#leave_a_comment {
   margin-bottom: 10px; }
+
+/* vcard reset */
+.vcard {
+  display: inherit;
+  margin: inherit;
+  border: 0px;
+  padding: inherit; }
+
+.vcard .fn {
+  font-weight: inherit;
+  font-size: inherit; }
