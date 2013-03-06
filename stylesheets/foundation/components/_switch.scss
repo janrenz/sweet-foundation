@@ -2,9 +2,6 @@
 // Switch Variables
 //
 
-// Defining the name of the switch class
-$switch-class:                    ".switch" !default;
-
 // Controlling border styles and background colors for the switch container
 $switch-border-color:             darken(#fff, 20%) !default;
 $switch-border-style:             solid !default;
@@ -16,6 +13,7 @@ $switch-height-tny:               22px !default;
 $switch-height-sml:               28px !default;
 $switch-height-med:               36px !default;
 $switch-height-lrg:               44px !default;
+$switch-bottom-margin:            emCalc(20px) !default;
 
 // We use these to control default font sizes for our classes.
 $switch-font-size-tny:            11px !default;
@@ -30,13 +28,12 @@ $switch-paddle-fade-to-color:     darken($switch-paddle-bg, 10%) !default;
 $switch-paddle-border-color:      darken($switch-paddle-bg, 35%) !default;
 $switch-paddle-border-width:      1px !default;
 $switch-paddle-border-style:      solid !default;
-
 $switch-paddle-transition-speed:  .1s !default;
 $switch-paddle-transition-ease:   ease-out !default;
-
 $switch-positive-color:           lighten($success-color, 50%) !default;
 $switch-negative-color:           #f5f5f5 !default;
 
+// Outline Style for tabbing through switches
 $switch-label-outline:            1px dotted #888 !default;
 
 
@@ -55,6 +52,7 @@ $switch-label-outline:            1px dotted #888 !default;
   overflow: hidden;
   border-style: $switch-border-style;
   border-width: $switch-border-width;
+  margin-bottom: $switch-bottom-margin;
 
   // Default label styles for type and transition
   label {
@@ -79,12 +77,18 @@ $switch-label-outline:            1px dotted #888 !default;
     position: absolute;
     z-index: 3;
     opacity: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
+
+    // Hover and focus styles for the paddle
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
   }
 
   // The toggle area for radio switches. We call is a paddle.
-  #{$switch-class}-paddle {
+  & > span {
     position: absolute;
     top: -1px;
     left: -1px;
@@ -98,20 +102,27 @@ $switch-label-outline:            1px dotted #888 !default;
     @include single-transition(all, $transition-speed, $transition-ease);
   }
 
-  // Outline the toggles when the inputs are focused
-  input:focus + label { outline: $switch-label-outline; }
-
-  // Change text alignment for the second label
-  input:last-of-type + label { text-align: right; }
-
   // When a label isn't :checked, we hide it as it slides away.
   input:not(:checked) + label { opacity: 0; }
 
   // Controlling the position of the labels as they are toggled.
-  input:first-of-type + label { left: -50%; }
-  input:first-of-type:checked + label { left: 0%; }
-  input:last-of-type + label { right: -50%; left: auto; }
-  input:last-of-type:checked + label { right: 0%; left: auto; }
+  input:checked { display: none !important; }
+  input { left: 0; display: block !important; }
+
+  // Left Label alignment and position changes, including fixes for while inside a custom form
+  input:first-of-type + label,
+  input:first-of-type + span + label { left: -50%; }
+  input:first-of-type:checked + label,
+  input:first-of-type:checked + span + label { left: 0%; }
+
+  // Right Label alignment and position changes, including fixes for while inside a custom form
+  input:last-of-type + label,
+  input:last-of-type + span + label { right: -50%; left: auto; text-align: right; }
+  input:last-of-type:checked + label,
+  input:last-of-type:checked + span + label { right: 0%; left: auto; }
+
+  // Hiding custom form spans since we auto-create them
+  span.custom { display: none !important; }
 
   // Bugfix for older Webkit, including mobile Webkit. Adapted from:
   // http://css-tricks.com/webkit-sibling-bug/
@@ -132,13 +143,13 @@ $switch-label-outline:            1px dotted #888 !default;
 
   input {
     // Move the paddle to the right position
-    &:first-of-type:checked ~ #{$switch-class}-paddle {
+    &:first-of-type:checked ~ span {
       left: 100%;
       margin-left: emCalc(-$height + 1px);
     }
   }
 
-  #{$switch-class}-paddle {
+  & > span {
     width: emCalc($height);
     height: emCalc($height);
   }
@@ -152,7 +163,7 @@ $switch-label-outline:            1px dotted #888 !default;
     background: $switch-bg;
     border-color: $switch-border-color;
 
-    #{$switch-class}-paddle {
+    & > span {
       border-color: darken($paddle-bg, 30%);
       background: $paddle-bg;
       background: -moz-linear-gradient(top, $paddle-bg 0%, darken($paddle-bg, 5%) 100%);
@@ -169,52 +180,71 @@ $switch-label-outline:            1px dotted #888 !default;
                           -2px 0 10px 0 rgba(0,0,0,0.07),
                           -1000px 0 0 1000px $negative-color;
     }
+
+    &:hover,
+    &:focus {
+      & > span {
+        background: $paddle-bg;
+        background: -moz-linear-gradient(top, $paddle-bg 0%, darken($paddle-bg, 10%) 100%);
+        background: -webkit-linear-gradient(top, $paddle-bg 0%, darken($paddle-bg, 10%) 100%);
+        background: linear-gradient(to bottom, $paddle-bg 0%, darken($paddle-bg, 10%) 100%);
+      }
+    }
+
+    &:active { background: transparent; }
   }
 
   // Setting up the radius for switches
   @if $radius == true {
     @include radius(4px);
-    #{$switch-class}-paddle { @include radius(3px); }
+    & > span { @include radius(3px); }
   }
   @else if $radius {
     @include radius($radius);
-    #{$switch-class}-paddle { @include radius($radius - 1px); }
+    & > span { @include radius($radius - 1px); }
   }
 
 }
 
+// We use this to quickly create switches with a single mixin
+@mixin switch($transition-speed:$switch-paddle-transition-speed, $transition-ease:$switch-paddle-transition-ease, $height:$switch-height-med, $font-size:$switch-font-size-med, $line-height:2.3em, $paddle-bg:$switch-paddle-bg, $positive-color:$switch-positive-color, $negative-color:$switch-negative-color, $radius:false, $base-style:true) {
+  @include switch-base($transition-speed, $transition-ease);
+  @include switch-size($height, $font-size, $line-height);
+  @include switch-style($paddle-bg, $positive-color, $negative-color, $radius, $base-style);
+}
 
-/* Foundation Switches */
-@media only screen {
+@if $include-html-classes {
 
-  // Containing element for the radio switch
-  #{$switch-class} {
-    @include switch-base;
-    @include switch-size;
-    @include switch-style;
+  /* Foundation Switches */
+  @media only screen {
 
-    // Large radio switches
-    &.large { @include switch-size($switch-height-lrg, $switch-font-size-lrg); }
+    // Containing element for the radio switch
+    .switch {
+      @include switch;
 
-    // Small radio switches
-    &.small { @include switch-size($switch-height-sml, $switch-font-size-sml, 2.1em); }
+      // Large radio switches
+      &.large { @include switch-size($switch-height-lrg, $switch-font-size-lrg); }
 
-    // Tiny radio switches
-    &.tiny { @include switch-size($switch-height-tny, $switch-font-size-tny, 1.9em); }
+      // Small radio switches
+      &.small { @include switch-size($switch-height-sml, $switch-font-size-sml, 2.1em); }
 
-    // Add a radius to the switch
-    &.radius { @include radius(4px);
-      #{$switch-class}-paddle { @include radius(3px); }
+      // Tiny radio switches
+      &.tiny { @include switch-size($switch-height-tny, $switch-font-size-tny, 1.9em); }
+
+      // Add a radius to the switch
+      &.radius { @include radius(4px);
+        & > span { @include radius(3px); }
+      }
+
+      // Make the switch completely round, like a pill
+      &.round { @include radius(1000px);
+        & > span { @include radius(999px); }
+        label { padding: 0 emCalc($switch-label-side-padding + 3px); }
+      }
+
     }
 
-    // Make the switch completely round, like a pill
-    &.round { @include radius(1000px);
-      #{$switch-class}-paddle { @include radius(999px); }
-      label { padding: 0 emCalc($switch-label-side-padding + 3px); }
-    }
+    @-webkit-keyframes webkitSiblingBugfix { from { position: relative; } to { position: relative; } }
 
   }
-
-  @-webkit-keyframes webkitSiblingBugfix { from { position: relative; } to { position: relative; } }
-
 }

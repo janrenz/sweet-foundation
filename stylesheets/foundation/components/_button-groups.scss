@@ -1,20 +1,23 @@
 //
 // Button Group Variables
 //
-
-// We use this to control margin below button groups.
-$button-group-bottom-margin: emCalc(20px) !default;
+$button-bar-margin-right: emCalc(10px) !default;
 
 //
 // Button Group Mixins
 //
 
 // We use this to add styles for a button group container
-@mixin button-group-container($styles:true) {
+@mixin button-group-container($styles:true, $float:false) {
   @if $styles {
     list-style: none;
-    margin: 0 0 $button-group-bottom-margin;
+    margin: 0;
     @include clearfix();
+  }
+  @if $float {
+    float: #{$default-float};
+    margin-#{$default-opposite}: $button-bar-margin-right;
+    & div { overflow: hidden; }
   }
 }
 
@@ -47,7 +50,7 @@ $button-group-bottom-margin: emCalc(20px) !default;
 
 }
 
-
+// Only include these CSS classes if $include-html-classes: true
 @if $include-html-classes {
 
   /* Button Groups */
@@ -59,8 +62,13 @@ $button-group-bottom-margin: emCalc(20px) !default;
     &.round li { @include button-group-style($radius:1000px, $float:null); }
 
     @for $i from 2 through 8 {
-      &.even#{-$i} li { @include button-group-style($even:3, $float:null); }
+      &.even#{-$i} li { @include button-group-style($even:$i, $float:null); }
     }
+  }
+
+  .button-bar {
+    @include clearfix;
+    .button-group { @include button-group-container($styles:false,$float:true); }
   }
 
 }

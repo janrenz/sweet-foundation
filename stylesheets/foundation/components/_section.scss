@@ -1,17 +1,26 @@
 //
 // Section Variables
 //
-$section-padding: emCalc(15px) !default;
-$section-function-factor: 10% !default;
-$section-border-size: 1px !default;
-$section-title-color: #333 !default;
-$section-title-bg: #efefef !default;
-$section-title-bg-active: darken($section-title-bg, $section-function-factor) !default;
-$section-title-bg-active-tabs: #fff !default;
-$section-border-style: solid !default;
-$section-border-color: #ccc !default;
-$section-content-bg: #fff !default;
+
+// We use these to set padding and hover factor
+$section-padding:                emCalc(15px) !default;
+$section-function-factor:        10% !default;
+
+// These style the titles
+$section-title-color:            #333 !default;
+$section-title-bg:               #efefef !default;
+$section-title-bg-active:        darken($section-title-bg, $section-function-factor) !default;
+$section-title-bg-active-tabs:   #fff !default;
+
+// Want to control border size, here ya go!
+$section-border-size:            1px !default;
+$section-border-style:           solid !default;
+$section-border-color:           #ccc !default;
+
+// Control the color of the background and some size options
+$section-content-bg:             #fff !default;
 $section-vertical-nav-min-width: emCalc(200px) !default;
+$section-bottom-margin:          emCalc(20px) !default;
 
 
 //
@@ -25,6 +34,7 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
   @if $base-style {
     width: 100%;
     display: block;
+    margin-bottom: $section-bottom-margin;
   }
 
   // Accordion container border styles
@@ -43,6 +53,12 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
   @else if $section-type == vertical-nav {
 
   }
+
+  // Horizontal Nav container border styles
+  @else if $section-type == horizontal-nav {
+    border: 0;
+    position: relative;
+  }
 }
 
 // We use this mixin to create the styles for sections as accordions.
@@ -53,9 +69,6 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
 
     border-top: $section-border-size $section-border-style $section-border-color;
     position: relative;
-
-    *>:first-child { padding-top: 0; }
-    *>:last-child { padding-bottom: 0; }
 
     .title {
       top: 0;
@@ -69,6 +82,8 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
         display: inline-block;
         color: $section-title-color;
         font-size: emCalc(14px);
+        white-space: nowrap;
+        width: 100%;
       }
       &:hover { background-color: darken($section-title-bg, $section-function-factor/2); }
     }
@@ -78,13 +93,18 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
       padding: $section-padding;
       background-color: $section-content-bg;
 
-      *:last-child { margin-bottom: 0; }
+      &>*:last-child { margin-bottom: 0; }
+      &>*:first-child { padding-top: 0; }
+      &>*:last-child { padding-bottom: 0; }
     }
+
 
     &.active {
       .content { display: block; }
       .title { background: $section-title-bg-active; }
     }
+
+
   }
 
   // Tab Styles
@@ -100,6 +120,8 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
       border-right: 0;
       position: absolute;
       z-index: 1;
+
+      a { width: 100%; }
     }
     &:last-child .title { border-right: $section-border-size $section-border-style $section-border-color; }
 
@@ -109,7 +131,7 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
       z-index: 10;
     }
 
-    &.active { padding-top: ($section-padding * 3) + emCalc(7px);
+    &.active {
 
       .title {
         background-color: $section-title-bg-active-tabs;
@@ -123,7 +145,9 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
   // Vertical Nav Styles
   @else if $section-type == vertical-nav {
 
-    .title a { width: 100%; }
+    padding-top: 0 !important;
+
+    .title a { display: block; width: 100%; }
 
     .content { display: none; }
 
@@ -133,8 +157,40 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
         position: absolute;
         left: 100%;
         top: -1px;
+        z-index: 999;
         min-width: $section-vertical-nav-min-width;
-        border: $section-border-size $section-border-style $section-border-color;;
+        border: $section-border-size $section-border-style $section-border-color;
+      }
+    }
+  }
+
+  // Horizontal Nav Styles
+  @else if $section-type == horizontal-nav {
+    padding-top: 0;
+    border: 0;
+    position: static;
+    
+    .title {
+      top: 1px;
+      width: auto;
+      border: $section-border-size $section-border-style $section-border-color;
+      border-right: 0;
+      position: absolute;
+      z-index: 1;
+
+      a { width: 100%; }
+    }
+    &:last-child .title { border-right: $section-border-size $section-border-style $section-border-color; }
+
+    .content { display: none; }
+
+    &.active {
+      .content {
+        display: block;
+        position: absolute;
+        z-index: 999;
+        min-width: $section-vertical-nav-min-width;
+        border: $section-border-size $section-border-style $section-border-color;
       }
     }
   }
@@ -149,23 +205,33 @@ $section-vertical-nav-min-width: emCalc(200px) !default;
 
     section,
     .section { @include section; }
-
-    &.tabs {
-      @include section-container(false, tabs);
-
-      section,
-      .section { @include section(tabs); }
-    }
   }
 
-
   @media #{$small} {
+
+    .section-container.accordion .section {
+      padding-top: 0 !important;
+    }
 
     .section-container.vertical-nav {
       @include section-container(false);
 
       section,
       .section { @include section(vertical-nav); }
+    }
+
+    .section-container.horizontal-nav {
+      @include section-container(false, horizontal-nav);
+
+      section,
+      .section { @include section(horizontal-nav); }
+    }
+
+    .section-container.tabs {
+      @include section-container(false, tabs);
+
+      section,
+      .section { @include section(tabs); }
     }
   }
 

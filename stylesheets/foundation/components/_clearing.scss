@@ -31,72 +31,74 @@ $clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255) !default;
 // on predefined classes and structure to work properly.
 // The variables above should give enough control.
 
-@media only screen {
-  /* Clearing Styles */
-  .clearing-blackout {
-    background: $clearing-bg;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    #{$default-float}: 0;
-    z-index: 999;
+/* Clearing Styles */
+[data-clearing] {
+  @include clearfix;
+  margin-bottom: 0;
+}
 
-    .clearing-close { display: block; }
-  }
+.clearing-blackout {
+  background: $clearing-bg;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  #{$default-float}: 0;
+  z-index: 998;
 
-  .clearing-container {
-    position: relative;
-    z-index: 999;
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-  }
+  .clearing-close { display: block; }
+}
 
-  .visible-img {
-    height: 100%;
-    position: relative;
+.clearing-container {
+  position: relative;
+  z-index: 998;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
 
-    img {
-      position: absolute;
-      #{$default-float}: 50%;
-      top: 50%;
-      margin-#{$default-float}: -50%;
-      max-height: 100%;
-      max-width: 100%;
-    }
-  }
+.visible-img {
+  height: 95%;
+  position: relative;
 
-  .clearing-caption {
-    color: $clearing-caption-font-color;
-    line-height: 1.3;
-    margin-bottom: 0;
-    text-align: center;
-    bottom: 0;
-    background: $clearing-caption-bg;
-    width: 100%;
-    padding: $clearing-caption-padding;
-    position: fixed;
-    #{$default-float}: 0;
-  }
-
-  .clearing-close {
-    z-index: 999;
+  img {
     position: absolute;
-    top: 10px;
-    #{$default-opposite}: 20px;
-    font-size: $clearing-close-size;
-    line-height: 1;
-    color: $clearing-close-color;
-    display: none;
-
-    &:hover,
-    &:focus { color: #ccc; }
+    #{$default-float}: 50%;
+    top: 50%;
+    margin-#{$default-float}: -50%;
+    max-height: 100%;
+    max-width: 100%;
   }
+}
 
-  .clearing-assembled .clearing-container { height: 100%;
-    .carousel > ul { display: none; }
-  }
+.clearing-caption {
+  color: $clearing-caption-font-color;
+  line-height: 1.3;
+  margin-bottom: 0;
+  text-align: center;
+  bottom: 0;
+  background: $clearing-caption-bg;
+  width: 100%;
+  padding: $clearing-caption-padding;
+  position: absolute;
+  #{$default-float}: 0;
+}
+
+.clearing-close {
+  z-index: 999;
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: $clearing-close-size;
+  line-height: 1;
+  color: $clearing-close-color;
+  display: none;
+
+  &:hover,
+  &:focus { color: #ccc; }
+}
+
+.clearing-assembled .clearing-container { height: 100%;
+  .carousel > ul { display: none; }
 }
 
 
@@ -134,6 +136,9 @@ $clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255) !default;
   .clearing-main-left.disabled,
   .clearing-main-right.disabled { opacity: 0.5; }
 
+  // If you want to show a lightbox, but only have a single image come through as the thumbnail
+  .clearing-feature ~ li { display: none; }
+
   .clearing-assembled .clearing-container {
 
     .carousel {
@@ -160,8 +165,7 @@ $clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255) !default;
           margin-#{$default-opposite}: 1px;
           position: relative;
           cursor: pointer;
-
-          &.clearing-feature ~ li { display: none; }
+          opacity: 0.4;
 
           &.fix-height {
             img {
@@ -171,12 +175,19 @@ $clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255) !default;
             }
           }
 
+          a.th {
+            border: none;
+            -webkit-box-shadow: none;
+                    box-shadow: none;
+            display: block;
+          }
+
           img {
             cursor: pointer !important;
             min-width: 100% !important;
           }
 
-          &.visible { border-top: $clearing-carousel-thumb-active-border; }
+          &.visible { opacity: 1; }
         }
       }
     }
@@ -186,5 +197,13 @@ $clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255) !default;
       overflow: hidden;
       height: $clearing-active-img-height;
     }
+  }
+
+  .clearing-close {
+    position: absolute;
+    top: 10px;
+    #{$default-opposite}: 20px;
+    padding-left: 0;
+    padding-top: 0;
   }
 }

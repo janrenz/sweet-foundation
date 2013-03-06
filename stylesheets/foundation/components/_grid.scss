@@ -1,7 +1,7 @@
 //
 // Grid Variables
 //
-$row-width: 62.5em !default;
+$row-width:     62.5em !default;
 $column-gutter: 1.875em !default;
 $total-columns: 12 !default;
 
@@ -12,7 +12,7 @@ $total-columns: 12 !default;
 // For creating container, nested, and collapsed rows.
 @mixin grid-row($behavior: false) {
 
-  // use @include gridRow(nest); to include a nested row
+  // use @include grid-row(nest); to include a nested row
   @if $behavior == nest {
     width: auto;
     margin-left: -($column-gutter/2);
@@ -22,30 +22,21 @@ $total-columns: 12 !default;
     max-width: none;
   }
 
-  // use @include gridRow(collapse); to collapsed a container row margins
+  // use @include grid-row(collapse); to collapsed a container row margins
   @else if $behavior == collapse {
     width: 100%;
     margin: 0;
     max-width: $row-width;
   }
 
-  // use @include gridRow(nest-collapse); to collapse outer margins on a nested row
+  // use @include grid-row(nest-collapse); to collapse outer margins on a nested row
   @else if $behavior == nest-collapse {
     width: auto;
     margin: 0;
     max-width: none;
   }
 
-  // use @include gridRow(pad); to apply gutter padding to match mobile columns
-  @else if $behavior == pad {
-    width: 100%;
-    margin: 0 auto;
-    padding-left: $column-gutter / 2;
-    padding-right: $column-gutter / 2;
-    max-width: $row-width;
-  }
-
-  // use @include gridRow(); to use a container row
+  // use @include grid-row; to use a container row
   @else {
     width: 100%;
     margin-left: auto;
@@ -63,6 +54,8 @@ $total-columns: 12 !default;
 
 // For creating columns - @include these inside a media query to control small vs. large grid layouts
 @mixin grid-column($columns:false, $last-column:false, $center:false, $offset:false, $push:false, $pull:false, $collapse:false, $float:false) {
+
+  position: relative;
 
   // Gutter padding whenever a column isn't set to collapse
   @if $collapse == false {
@@ -107,22 +100,6 @@ $total-columns: 12 !default;
 
 
 /* Grid HTML Classes */
-img,
-object,
-embed { max-width: 100%; height: auto; }
-
-object,
-embed { height: 100%; }
-img { -ms-interpolation-mode: bicubic; }
-
-#map_canvas,
-.map_canvas {
-  img,
-  embed,
-  object { max-width: none !important;
-  }
-}
-
 @if $include-html-classes {
 
   .row {
@@ -154,12 +131,7 @@ img { -ms-interpolation-mode: bicubic; }
       .row .small-offset-#{$i} { @include grid-column($offset:$i, $collapse:null); }
     }
 
-    @for $i from 2 through $total-columns - 2 {
-      .small-push#{-$i} { @include grid-column($push:$i, $collapse:null); }
-      .small-pull#{-$i} { @include grid-column($pull:$i, $collapse:null); }
-    }
-
-    [class*="column"] + [class*="column"]:last-of-type { float: $default-opposite; }
+    [class*="column"] + [class*="column"]:last-child { float: $default-opposite; }
     [class*="column"] + [class*="column"].end { float: $default-float; }
 
     .column.small-centered,
@@ -178,8 +150,13 @@ img { -ms-interpolation-mode: bicubic; }
     }
 
     @for $i from 2 through $total-columns - 2 {
-      .large-push#{-$i} { @include grid-column($push:$i, $collapse:null); }
-      .large-pull#{-$i} { @include grid-column($pull:$i, $collapse:null); }
+      .push#{-$i} { @include grid-column($push:$i, $collapse:null); }
+      .pull#{-$i} { @include grid-column($pull:$i, $collapse:null); }
+    }
+
+    @for $i from 2 through $total-columns - 2 {
+      .small-push#{-$i} { left: inherit; }
+      .small-pull#{-$i} { right: inherit; }
     }
 
     .column.large-centered,
