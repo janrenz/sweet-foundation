@@ -57,14 +57,13 @@
 	<div id="container">
 
 		<header class="header">
-
 			<?php 
 			
 			if (get_option( 'display_top_bar', 1 ) == 1)
 			{
 				?>
+				
 
-			<div class="top-bar-wrapper">
 				<?php 
 				//get topbar classes
 				//fixed contain-to-grid
@@ -73,7 +72,7 @@
 		
 				if (get_option( 'topbar_is_fixed', 1 ) == 1)
 				{
-					$sweet_foundation_topbar_classes[] = 'fi-xed';
+					$sweet_foundation_topbar_classes[] = 'fixed';
 				}
 				if (get_option( 'topbar_is_sticky', 1 ) == 1)
 				{
@@ -84,8 +83,8 @@
 				if (get_option( 'topbar_is_on_top', false ) )
 				{
 					?>
-				<div
-					class="<?php echo implode($sweet_foundation_topbar_classes, ' ');?>">
+			<div class="top-bar-wrapper <?php echo implode($sweet_foundation_topbar_classes, ' ');?>">
+			
 					<nav class="container top-bar">
 
 						<ul class="title-area">
@@ -127,7 +126,6 @@
 					</nav>
 				</div>
 				<?php } ?>
-			</div>
 			<?php } ?>
 
 			<?php  
@@ -206,7 +204,7 @@
 				</section>
 
 			</nav>
-		</div>
-	</div></div>
+		</div></div></div>
+
 
 		<?php } ?>
