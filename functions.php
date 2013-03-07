@@ -10,6 +10,18 @@ if (!isset($sf_big_col)) $sf_big_col = 9;
 if (!isset($sf_small_col)) $sf_small_col = 3;
 
 
+/**
+ * Sticky class fix
+ */
+add_filter('post_class','my_post_classes');
+function my_post_classes($classes) {
+    if(in_array('sticky', $classes)){
+    	$pos = array_search('sticky', $classes); // returns the first key whose value is 'green'
+		$classes[$pos] = 'sf_sticky';
+    } 
+    
+    return $classes;
+}
 if ( ! function_exists( 'sf_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

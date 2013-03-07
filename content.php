@@ -41,11 +41,11 @@
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-	<div class="entry-summary">
+	<div class="entry-summary clearfix">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sf' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'sf' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
