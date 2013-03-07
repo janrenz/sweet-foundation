@@ -150,6 +150,32 @@ class SFThemeOptions
 				'title'          => 'Header and Footer',
 				'priority'       => 2,
 		) );
+		$wp_customize->add_control( 'display_top_bar', array(
+				'label'   => 'Display Top Bar',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'hide_title_top_bar', array(
+				'label'   => 'Hide Title in Top Bar',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		//hide_topbar_search
+		$wp_customize->add_control( 'hide_topbar_search', array(
+				'label'   => 'Hide Search in Top Bar',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'display_header_area_on_frontpage', array(
+				'label'   => 'Show Header on Home Page',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
+		$wp_customize->add_control( 'display_header_area_on_subpages', array(
+				'label'   => 'Show Header on other pages',
+				'section' => 'theme_header_settings',
+				'type'    => 'checkbox',
+		) );
 		$wp_customize->add_section( 'theme_element_settings', array(
 				'title'          => 'Hide Elements',
 				'priority'       => 20,
@@ -170,32 +196,8 @@ class SFThemeOptions
                 'section' => 'theme_element_settings',
                 'type'    => 'checkbox',
         ) );
-		$wp_customize->add_control( 'display_header_area_on_frontpage', array(
-				'label'   => 'Show Header on Home Page',
-				'section' => 'theme_header_settings',
-				'type'    => 'checkbox',
-		) );
-		$wp_customize->add_control( 'display_header_area_on_subpages', array(
-				'label'   => 'Show Header on other pages',
-				'section' => 'theme_header_settings',
-				'type'    => 'checkbox',
-		) );
-		$wp_customize->add_control( 'display_top_bar', array(
-				'label'   => 'Display Top Bar',
-				'section' => 'theme_header_settings',
-				'type'    => 'checkbox',
-		) );
-		$wp_customize->add_control( 'hide_title_top_bar', array(
-				'label'   => 'Hide Title in Top Bar',
-				'section' => 'theme_header_settings',
-				'type'    => 'checkbox',
-		) );
-		//hide_topbar_search
-		$wp_customize->add_control( 'hide_topbar_search', array(
-				'label'   => 'Hide Search in Top Bar',
-				'section' => 'theme_header_settings',
-				'type'    => 'checkbox',
-		) );
+
+	
 		$wp_customize->add_control( 'hide_404_categories', array(
 				'label'   => 'Hide Categories in 404 page',
 				'section' => 'theme_element_settings',

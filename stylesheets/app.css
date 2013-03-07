@@ -3931,6 +3931,9 @@ table {
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.header-with-fixed-topbar-spacer {
+  height: 45px; }
+
 /**
  *   
  */

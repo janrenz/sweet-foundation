@@ -128,15 +128,23 @@
 				<?php } ?>
 			<?php } ?>
 
+			<?php
+				if (get_option( 'topbar_is_fixed', 1 ) == 1 && get_option( 'topbar_is_on_top', false ) ){
+				
+					?>
+					<div class="header-with-fixed-topbar-spacer"></div>
+					<?php
+				}
+			?>
 			<?php  
-
 			if (
-					(is_front_page() && get_option( 'display_header_area_on_frontpage', 1 ) == 1)
+					(is_front_page() && get_option( 'display_header_area_on_frontpage', true ))
 					||
-					(!is_front_page() &&  get_option( 'display_header_area_on_subpages', 1 ) == 1)){
+					(!is_front_page() &&  get_option( 'display_header_area_on_subpages', true ))){
 				?>
-			<!--header-->
-			<div class="full-width header-wrapper">
+			<!--header-->	
+				
+			<div class="full-width header-wrapper <?php echo ($headerclass);?>">
 
 				<div class="row">
 					<div class="large-12 columns">
