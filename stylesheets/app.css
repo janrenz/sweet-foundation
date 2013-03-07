@@ -3924,6 +3924,9 @@ table {
   .f-dropdown.large {
     max-width: 800px; }
 
+.row, .contain-to-grid .top-bar {
+  max-width: 1200px; }
+
 /**
  *   
  */
@@ -4057,9 +4060,6 @@ p#logo {
 
 .h2 {
   font-size: 150%; }
-
-.row {
-  max-width: 1200px; }
 
 .header-wrapper .header-name a, .header-wrapper .header-description {
   color: #ffffff; }

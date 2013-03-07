@@ -4,6 +4,9 @@
 @import "font-awesome.min.css";
 @import "foundation.scss";
 
+.row, .contain-to-grid .top-bar {
+  max-width: 1200px; 
+}
 
 /**
  *   
@@ -181,9 +184,7 @@ p#logo {
 .h2 {
   font-size: 150%;
 }
-.row {
-  max-width: 1200px; 
-}
+
 .header-wrapper {
   .header-name a, .header-description {
     color: #ffffff;
