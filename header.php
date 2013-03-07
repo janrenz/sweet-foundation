@@ -165,6 +165,7 @@
 		<?php 
 		if (get_option( 'topbar_is_on_top', false ) == false)
 		{
+			$sweet_foundation_topbar_classes[] = 'topbar_in_content';
 			?>
 			<div class="row"><div class="large-12 columns">
 		<div

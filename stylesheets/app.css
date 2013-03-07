@@ -3927,6 +3927,10 @@ table {
 .row, .contain-to-grid .top-bar {
   max-width: 1200px; }
 
+.topbar_in_content {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
 /**
  *   
  */
