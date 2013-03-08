@@ -102,7 +102,7 @@ extract( shortcode_atts( array(
     $attachments =  array_merge($attachments, get_posts($args));
     if (count($attachments)>0) {
     //$output = '<div >';
-        $output .= '<div class="row"><div class="twelve columns"><div id="featured" class="'.$class.'">';
+        $output .= '<div class="row"><div class="large-12 columns"><div id="featured" class="'.$class.'">';
         foreach ( $attachments as $attachment ) {
             $imgmeta = wp_get_attachment_metadata( $attachment->ID );
             if ($imgmeta['width'] > $minwidth && $imgmeta['height'] > $minheight ){
